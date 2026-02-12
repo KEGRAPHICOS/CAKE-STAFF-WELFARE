@@ -1,0 +1,79 @@
+:root {
+  --primary: #091625;
+  --accent: #143050;
+  --light: #5680e0;
+  --dark: #103255;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, var(--primary), var(--light));
+  color: white;
+  text-align: center;
+  overflow: hidden; /* prevents scroll during animation */
+}
+
+.landing-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  transform: translateX(100%);  /* start off-screen right */
+  opacity: 0;
+  animation: slideIn 1.5s forwards; /* slide-in on load */
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.landing-container.slide-out {
+  transform: translateX(-100%); /* slide out to left */
+  opacity: 0;
+  transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.landing-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.landing-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.btn-enter {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  background: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-enter:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(0.9);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.6rem;
+  color: #bfc6ce;
+}
