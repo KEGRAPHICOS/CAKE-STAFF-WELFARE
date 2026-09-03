@@ -2,6 +2,7 @@
    CAKE STAFFS WELFARE
    PREMIUM ADMIN DASHBOARD
    VISUAL STYLES ONLY
+
    ---------------------------------------------------------
    IMPORTANT:
    - No IDs changed
@@ -14,13 +15,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family:
         "Inter",
         "Segoe UI",
         Arial,
         sans-serif;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -94,7 +93,6 @@ body {
             transparent 28%
         ),
         var(--bg);
-
     color: var(--text);
     overflow-x: hidden;
 }
@@ -120,13 +118,10 @@ button {
 ========================================================= */
 
 #loginPage {
-
     min-height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 24px;
 
     background:
@@ -151,40 +146,27 @@ button {
     overflow: hidden;
 }
 
-
-/* Decorative background circles */
-
 #loginPage::before,
 #loginPage::after {
-
     content: "";
-
     position: absolute;
-
     border-radius: 50%;
-
     pointer-events: none;
 }
 
 #loginPage::before {
-
     width: 280px;
     height: 280px;
-
     top: -120px;
     right: -90px;
-
     border: 1px solid rgba(229, 198, 90, 0.15);
 }
 
 #loginPage::after {
-
     width: 220px;
     height: 220px;
-
     bottom: -100px;
     left: -70px;
-
     border: 1px solid rgba(255,255,255,0.08);
 }
 
@@ -194,38 +176,29 @@ button {
 ========================================================= */
 
 .loginBox {
-
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 410px;
-
     padding: 38px 32px;
 
     background: rgba(255,255,255,0.98);
-
     border-radius: 22px;
 
     box-shadow:
         0 30px 80px rgba(0,0,0,0.25);
 
     border: 1px solid rgba(255,255,255,0.7);
-
     overflow: hidden;
 
     animation: loginAppear 0.45s ease;
 }
 
 .loginBox::before {
-
     content: "";
-
     position: absolute;
-
     top: 0;
     left: 0;
-
     width: 100%;
     height: 4px;
 
@@ -244,10 +217,8 @@ button {
 ========================================================= */
 
 .loginLogo {
-
     width: 68px;
     height: 68px;
-
     margin: 0 auto 18px;
 
     border-radius: 18px;
@@ -264,7 +235,6 @@ button {
         );
 
     color: var(--accent-light);
-
     font-size: 27px;
 
     box-shadow:
@@ -279,41 +249,27 @@ button {
 ========================================================= */
 
 .loginBox h1 {
-
     color: var(--primary);
-
     font-size: 19px;
     font-weight: 800;
-
     text-align: center;
-
     letter-spacing: -0.3px;
 }
 
 .loginBox h2 {
-
     color: var(--accent);
-
     font-size: 13px;
     font-weight: 800;
-
     text-align: center;
-
     margin-top: 6px;
-
     letter-spacing: 1.5px;
 }
 
 .loginSubtitle {
-
     color: var(--muted);
-
     font-size: 12px;
-
     line-height: 1.6;
-
     text-align: center;
-
     margin: 9px 0 26px;
 }
 
@@ -323,16 +279,11 @@ button {
 ========================================================= */
 
 .loginBox form > label:not(.rememberLabel) {
-
     display: block;
-
     font-size: 10px;
     font-weight: 800;
-
     color: var(--text);
-
     margin-top: 16px;
-
     letter-spacing: 0.7px;
 }
 
@@ -342,21 +293,15 @@ button {
 ========================================================= */
 
 .loginBox input {
-
     width: 100%;
-
     padding: 13px 14px;
-
     margin-top: 8px;
 
     background: #fbfcfe;
-
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     outline: none;
-
     color: var(--text);
 
     transition:
@@ -370,9 +315,7 @@ button {
 }
 
 .loginBox input:focus {
-
     background: #fff;
-
     border-color: var(--primary-light);
 
     box-shadow:
@@ -385,7 +328,6 @@ button {
 ========================================================= */
 
 .passwordBox {
-
     position: relative;
     width: 100%;
 }
@@ -395,21 +337,16 @@ button {
 }
 
 .eye {
-
     position: absolute;
-
     right: 6px;
     top: 50%;
-
     transform: translateY(-30%);
 
     width: 40px;
     height: 40px;
 
     border: none;
-
     background: transparent;
-
     color: #98a2b3;
 
     cursor: pointer;
@@ -426,9 +363,7 @@ button {
 }
 
 .eye:hover {
-
     color: var(--primary);
-
     background: var(--surface-soft);
 }
 
@@ -438,26 +373,20 @@ button {
 ========================================================= */
 
 .rememberLabel {
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
 
     margin-top: 15px;
 
     color: var(--muted);
-
     font-size: 11px;
-
     font-weight: 600;
 
     cursor: pointer;
 }
 
 .rememberLabel input {
-
     width: 16px;
     height: 16px;
 
@@ -465,7 +394,6 @@ button {
     padding: 0;
 
     accent-color: var(--primary);
-
     cursor: pointer;
 }
 
@@ -475,17 +403,12 @@ button {
 ========================================================= */
 
 .loginBtn {
-
     width: 100%;
-
     margin-top: 22px;
-
     min-height: 48px;
-
     padding: 13px 16px;
 
     border: none;
-
     border-radius: 10px;
 
     background:
@@ -498,7 +421,6 @@ button {
     color: #fff;
 
     font-weight: 800;
-
     font-size: 12px;
 
     cursor: pointer;
@@ -513,7 +435,6 @@ button {
 }
 
 .loginBtn:hover {
-
     transform: translateY(-1px);
 
     box-shadow:
@@ -525,11 +446,8 @@ button {
 }
 
 .loginBtn:disabled {
-
     opacity: 0.65;
-
     cursor: not-allowed;
-
     transform: none;
 }
 
@@ -543,25 +461,19 @@ button {
 ========================================================= */
 
 .errorMessage {
-
     display: none;
 
     color: var(--red);
-
     font-size: 11px;
-
     text-align: center;
 
     margin-top: 12px;
-
     line-height: 1.5;
 
     background: var(--red-soft);
-
     border: 1px solid #ffd5d2;
 
     border-radius: 8px;
-
     padding: 9px 10px;
 }
 
@@ -571,9 +483,7 @@ button {
 ========================================================= */
 
 #dashPage {
-
     display: none;
-
     min-height: 100vh;
 }
 
@@ -583,20 +493,15 @@ button {
 ========================================================= */
 
 .mainHeader {
-
     position: sticky;
     top: 0;
-
     z-index: 500;
 
     min-height: 74px;
-
     padding: 12px 28px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
@@ -622,96 +527,74 @@ button {
 ========================================================= */
 
 .headerTitle {
-
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
-
     gap: 8px;
 }
 
 .headerTitle > i {
-
     width: 52px;
-
     height: 52px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border-radius: 14px;
 
-    background: rgba(20, 184, 166, 0.15);
-
+    background: rgba(20,184,166,0.15);
     color: #14b8a6;
 
     font-size: 25px;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 6px 18px rgba(0,0,0,0.12);
 }
 
 .headerText h1 {
-
     margin: 0;
-
     font-size: 22px;
-
     font-weight: 800;
-
     letter-spacing: 0.5px;
 }
 
 .headerText p {
-
     margin: 4px 0 0;
 
     font-size: 12px;
-
     font-weight: 600;
 
     opacity: 0.7;
-
     letter-spacing: 1.5px;
 }
+
 
 /* =========================================================
    HEADER BUTTONS
 ========================================================= */
 
 .headerButtons {
-
     display: flex;
-
     align-items: center;
-
     gap: 8px;
 }
 
 .btn {
-
     border: 1px solid transparent;
 
     min-height: 38px;
-
     padding: 9px 13px;
 
     border-radius: 9px;
 
     font-weight: 800;
-
     font-size: 10px;
 
     cursor: pointer;
-
     white-space: nowrap;
 
     transition:
@@ -721,7 +604,6 @@ button {
 }
 
 .btn:hover {
-
     transform: translateY(-1px);
 }
 
@@ -729,13 +611,8 @@ button {
     margin-right: 5px;
 }
 
-
-/* Add */
-
 .add {
-
     background: #fff;
-
     color: var(--primary);
 
     box-shadow:
@@ -746,13 +623,8 @@ button {
     background: #f8fafc;
 }
 
-
-/* Save */
-
 .saveAll {
-
     background: var(--green);
-
     color: #fff;
 
     box-shadow:
@@ -763,21 +635,24 @@ button {
     background: var(--green-dark);
 }
 
-
-/* Logout */
-
 .out {
     background: #dc2626;
     color: #ffffff;
+
     border-color: #dc2626;
-    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.22);
+
+    box-shadow:
+        0 4px 12px rgba(220,38,38,0.22);
 }
 
 .out:hover {
     background: #000000;
     color: #ffffff;
     border-color: #000000;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 6px 16px rgba(0,0,0,0.25);
+
     transform: translateY(-1px);
 }
 
@@ -793,13 +668,10 @@ button {
 ========================================================= */
 
 .wrap {
-
     width: 100%;
-
     max-width: 1500px;
 
     margin: auto;
-
     padding: 24px 28px;
 }
 
@@ -809,33 +681,27 @@ button {
 ========================================================= */
 
 .top {
-
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
     gap: 16px;
-
     margin-bottom: 18px;
 }
 
 .card {
-
     position: relative;
 
     display: flex;
-
     align-items: center;
 
     gap: 15px;
-
     padding: 20px;
 
     background: var(--surface);
 
     border: 1px solid var(--border-light);
-
     border-radius: var(--radius-lg);
 
     box-shadow: var(--shadow);
@@ -848,11 +714,9 @@ button {
 }
 
 .card::after {
-
     content: "";
 
     position: absolute;
-
     right: -35px;
     top: -35px;
 
@@ -868,19 +732,11 @@ button {
 }
 
 .card:hover {
-
     transform: translateY(-2px);
-
     box-shadow: var(--shadow-lg);
 }
 
-
-/* =========================================================
-   CARD ICONS
-========================================================= */
-
 .cardIcon {
-
     width: 52px;
     height: 52px;
 
@@ -893,7 +749,6 @@ button {
     flex-shrink: 0;
 
     background: var(--blue-soft);
-
     color: var(--blue);
 
     font-size: 20px;
@@ -902,36 +757,24 @@ button {
 }
 
 .membersIcon {
-
     background: var(--green-soft);
-
     color: var(--green);
-
     border-color: #d3efdf;
 }
 
-
-/* =========================================================
-   CARD TEXT
-========================================================= */
-
 .card small {
-
     display: block;
 
     color: var(--muted);
 
     font-size: 9px;
-
     font-weight: 800;
 
     text-transform: uppercase;
-
     letter-spacing: 0.8px;
 }
 
 .card h2 {
-
     color: var(--primary);
 
     font-size: 25px;
@@ -939,7 +782,6 @@ button {
     margin-top: 5px;
 
     font-weight: 800;
-
     letter-spacing: -0.5px;
 }
 
@@ -949,16 +791,12 @@ button {
 ========================================================= */
 
 .searchBox {
-
     position: relative;
-
     width: 100%;
-
     margin-bottom: 14px;
 }
 
 .searchBox > i {
-
     position: absolute;
 
     left: 15px;
@@ -969,12 +807,10 @@ button {
     color: #98a2b3;
 
     pointer-events: none;
-
     font-size: 13px;
 }
 
 .searchBox input {
-
     width: 100%;
 
     min-height: 46px;
@@ -982,13 +818,11 @@ button {
     padding: 12px 14px 12px 42px;
 
     border: 1px solid var(--border);
-
     border-radius: 10px;
 
     outline: none;
 
     background: #fff;
-
     color: var(--text);
 
     box-shadow: var(--shadow-sm);
@@ -1003,7 +837,6 @@ button {
 }
 
 .searchBox input:focus {
-
     border-color: var(--primary-light);
 
     box-shadow:
@@ -1016,23 +849,19 @@ button {
 ========================================================= */
 
 .yearBar {
-
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 12px;
 
     margin: 14px 0;
-
     padding: 12px 14px;
 
     background: rgba(255,255,255,0.75);
 
     border: 1px solid var(--border-light);
-
     border-radius: 11px;
 
     box-shadow: var(--shadow-sm);
@@ -1041,18 +870,13 @@ button {
 }
 
 .yearSelectBox {
-
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 }
 
 .yearBar label {
-
     font-size: 9px;
-
     font-weight: 800;
 
     color: var(--muted);
@@ -1061,32 +885,26 @@ button {
 }
 
 .yearBar select {
-
     min-height: 38px;
 
     border: 1px solid var(--border);
-
     border-radius: 8px;
 
     padding: 8px 30px 8px 11px;
 
     background: #fff;
-
     color: var(--primary);
 
     font-weight: 800;
-
     font-size: 12px;
 
     outline: none;
-
     cursor: pointer;
 
     box-shadow: var(--shadow-sm);
 }
 
 .yearBar select:focus {
-
     border-color: var(--primary-light);
 
     box-shadow:
@@ -1094,22 +912,17 @@ button {
 }
 
 #syncStatus {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 6px;
 
     font-size: 10px;
-
     font-weight: 800;
 
     color: var(--muted);
 }
 
 #syncStatus::before {
-
     content: "";
 
     width: 7px;
@@ -1158,15 +971,12 @@ button {
 ========================================================= */
 
 .panel {
-
     background: #fff;
 
     border: 1px solid var(--border-light);
-
     border-radius: var(--radius-lg);
 
     padding: 18px;
-
     margin-bottom: 18px;
 
     display: none;
@@ -1177,22 +987,16 @@ button {
 }
 
 .panelHeader {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     margin-bottom: 14px;
 }
 
 .panelHeader h3 {
-
     color: var(--primary);
-
     font-size: 13px;
-
     font-weight: 800;
 }
 
@@ -1202,11 +1006,9 @@ button {
 }
 
 .panelClose {
-
     border: none;
 
     background: #f2f4f7;
-
     color: var(--muted);
 
     width: 34px;
@@ -1222,21 +1024,16 @@ button {
 }
 
 .panelClose:hover {
-
     background: var(--red-soft);
-
     color: var(--red);
 }
 
 .addMemberForm {
-
     display: flex;
-
     gap: 10px;
 }
 
 .addMemberForm input {
-
     flex: 1;
 
     min-height: 44px;
@@ -1244,18 +1041,15 @@ button {
     padding: 11px 13px;
 
     border: 1px solid var(--border);
-
     border-radius: 9px;
 
     outline: none;
 
     background: #fbfcfe;
-
     color: var(--text);
 }
 
 .addMemberForm input:focus {
-
     background: #fff;
 
     border-color: var(--primary-light);
@@ -1265,7 +1059,6 @@ button {
 }
 
 .save {
-
     background:
         linear-gradient(
             135deg,
@@ -1282,11 +1075,9 @@ button {
     border-radius: 9px;
 
     font-weight: 800;
-
     font-size: 11px;
 
     cursor: pointer;
-
     white-space: nowrap;
 
     transition:
@@ -1295,7 +1086,6 @@ button {
 }
 
 .save:hover {
-
     transform: translateY(-1px);
 
     box-shadow:
@@ -1315,7 +1105,6 @@ button {
     background: #fff;
 
     border: 1px solid var(--border-light);
-
     border-radius: var(--radius-lg);
 
     overflow: visible;
@@ -1331,11 +1120,9 @@ button {
 ========================================================= */
 
 .tableHeader {
-
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 15px;
@@ -1353,34 +1140,24 @@ button {
 }
 
 .tableHeader h3 {
-
     color: var(--primary);
-
     font-size: 14px;
-
     font-weight: 800;
 }
 
 .tableHeader h3 i {
-
     color: var(--accent);
-
     margin-right: 7px;
 }
 
 .tableHeader p {
-
     color: var(--muted);
-
     font-size: 10px;
-
     margin-top: 5px;
 }
 
 #recordCount {
-
     display: inline-flex;
-
     align-items: center;
 
     padding: 6px 10px;
@@ -1394,7 +1171,6 @@ button {
     color: var(--muted);
 
     font-size: 10px;
-
     font-weight: 800;
 
     white-space: nowrap;
@@ -1402,16 +1178,20 @@ button {
 
 
 /* =========================================================
-   TABLE SCROLL
+   TABLE HORIZONTAL SCROLL
 ========================================================= */
 
 .scroll {
     width: 100%;
+
     overflow-x: auto;
     overflow-y: visible;
+
     -webkit-overflow-scrolling: touch;
+
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;
+
     position: relative;
 }
 
@@ -1432,42 +1212,63 @@ button {
     background: #94a3b8;
 }
 
+
+/* =========================================================
+   TABLE
+========================================================= */
+
 table {
     width: 100%;
     min-width: 1050px;
+
     border-collapse: separate;
     border-spacing: 0;
 }
 
+
 /* =========================================================
-   STICKY TABLE HEADER
+   STICKY TABLE HEADERS
 ========================================================= */
 
 thead {
     position: sticky;
     top: 0;
+
     z-index: 25;
 }
 
 th {
     position: sticky;
     top: 0;
+
     z-index: 20;
+
     background:
         linear-gradient(
             135deg,
             var(--primary-dark),
             var(--primary)
         );
+
     color: #fff;
+
     padding: 13px 9px;
+
     font-size: 9px;
     font-weight: 800;
+
     text-align: center;
+
     white-space: nowrap;
+
     letter-spacing: 0.5px;
+
     border-bottom: 2px solid var(--accent);
+
+    /* Prevent transparency while sticky */
+    background-clip: padding-box;
 }
+
 
 /* =========================================================
    STICKY NAME HEADER
@@ -1475,25 +1276,32 @@ th {
 
 th:first-child {
     position: sticky;
+
     top: 0;
     left: 0;
-    z-index: 40;
+
+    z-index: 50;
+
     min-width: 190px;
     width: 190px;
+
     text-align: left;
+
     background:
         linear-gradient(
             135deg,
             var(--primary-dark),
             var(--primary)
         );
+
     box-shadow:
-        4px 0 10px rgba(16,24,40,0.10);
+        4px 0 10px rgba(16,24,40,0.12);
 }
 
 th:last-child {
     min-width: 110px;
 }
+
 
 /* =========================================================
    TABLE CELLS
@@ -1501,12 +1309,19 @@ th:last-child {
 
 td {
     padding: 9px 8px;
+
     border-bottom: 1px solid var(--border-light);
+
     font-size: 11px;
+
     white-space: nowrap;
+
     background: #fff;
+
     text-align: center;
-    transition: background 0.15s ease;
+
+    transition:
+        background 0.15s ease;
 }
 
 tbody tr:hover td {
@@ -1517,20 +1332,29 @@ tbody tr:last-child td {
     border-bottom: none;
 }
 
+
 /* =========================================================
    STICKY MEMBER NAME COLUMN
 ========================================================= */
 
 td:first-child {
     position: sticky;
+
     left: 0;
+
     z-index: 15;
+
     min-width: 190px;
     width: 190px;
+
     background: #fff;
+
     text-align: left;
+
     box-shadow:
-        4px 0 10px rgba(16,24,40,0.05);
+        4px 0 10px rgba(16,24,40,0.06);
+
+    background-clip: padding-box;
 }
 
 tbody tr:hover td:first-child {
@@ -1539,18 +1363,17 @@ tbody tr:hover td:first-child {
 
 td:first-child b {
     display: block;
+
     color: var(--text-dark);
+
     font-size: 11px;
     font-weight: 800;
 }
 
-/* =========================================================
-   STICKY HEADER + NAME COLUMN LAYER
-========================================================= */
 
-thead th:first-child {
-    z-index: 50;
-}
+/* =========================================================
+   HEADER / NAME COLUMN LAYERING
+========================================================= */
 
 thead th {
     background:
@@ -1561,175 +1384,27 @@ thead th {
         );
 }
 
+thead th:first-child {
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    z-index: 100;
+}
+
 tbody td:first-child {
+    position: sticky;
+
+    left: 0;
+
+    z-index: 30;
+
     background: #fff;
 }
 
 tbody tr:hover td:first-child {
     background: #fafbfc;
-}
-
-/* =========================================================
-   CONTRIBUTION INPUTS
-========================================================= */
-
-td input {
-    width: 70px;
-    min-height: 34px;
-    padding: 7px 6px;
-    border: 1px solid #d0d5dd;
-    border-radius: 7px;
-    background: #fff;
-    text-align: center;
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--primary);
-    outline: none;
-    transition:
-    border-color 0.15s ease,
-    box-shadow 0.15s ease,
-    background 0.15s ease;
-}
-
-td input:hover {
-    border-color: #b7bec9;
-}
-
-td input:focus {
-    border-color: var(--primary-light);
-    background: #fff;
-    box-shadow:
-        0 0 0 3px rgba(36,59,103,0.07);
-}
-
-td input.zero {
-    color: var(--red);
-    background: var(--red-soft);
-    border-color: #f5c2bf;
-}
-
-
-/* =========================================================
-   TABLE HEADER
-========================================================= */
-
-th {
-
-    position: relative;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary-dark),
-            var(--primary)
-        );
-
-    color: #fff;
-
-    padding: 13px 9px;
-
-    font-size: 9px;
-
-    font-weight: 800;
-
-    text-align: center;
-
-    white-space: nowrap;
-
-    letter-spacing: 0.5px;
-
-    border-bottom: 2px solid var(--accent);
-}
-
-th:first-child {
-
-    position: sticky;
-
-    left: 0;
-
-    z-index: 20;
-
-    min-width: 190px;
-
-    width: 190px;
-
-    text-align: left;
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary-dark),
-            var(--primary)
-        );
-}
-
-th:last-child {
-    min-width: 110px;
-}
-
-
-/* =========================================================
-   TABLE CELLS
-========================================================= */
-
-td {
-
-    padding: 9px 8px;
-
-    border-bottom: 1px solid var(--border-light);
-
-    font-size: 11px;
-
-    white-space: nowrap;
-
-    background: #fff;
-
-    text-align: center;
-
-    transition: background 0.15s ease;
-}
-
-tbody tr:hover td {
-    background: #fafbfc;
-}
-
-tbody tr:last-child td {
-    border-bottom: none;
-}
-
-td:first-child {
-
-    position: sticky;
-
-    left: 0;
-
-    z-index: 10;
-
-    min-width: 190px;
-
-    width: 190px;
-
-    background: #fff;
-
-    text-align: left;
-
-    box-shadow:
-        4px 0 10px rgba(16,24,40,0.05);
-}
-
-tbody tr:hover td:first-child {
-    background: #fafbfc;
-}
-
-td:first-child b {
-
-    display: block;
-
-    color: var(--text-dark);
-
-    font-size: 11px;
-
-    font-weight: 800;
 }
 
 
@@ -1738,7 +1413,6 @@ td:first-child b {
 ========================================================= */
 
 td input {
-
     width: 70px;
 
     min-height: 34px;
@@ -1754,7 +1428,6 @@ td input {
     text-align: center;
 
     font-size: 11px;
-
     font-weight: 700;
 
     color: var(--primary);
@@ -1772,7 +1445,6 @@ td input:hover {
 }
 
 td input:focus {
-
     border-color: var(--primary-light);
 
     background: #fff;
@@ -1782,7 +1454,6 @@ td input:focus {
 }
 
 td input.zero {
-
     color: var(--red);
 
     background: var(--red-soft);
@@ -1796,11 +1467,9 @@ td input.zero {
 ========================================================= */
 
 .memberTotal {
-
     color: var(--primary);
 
     font-size: 11px;
-
     font-weight: 800;
 
     white-space: nowrap;
@@ -1812,11 +1481,9 @@ td input.zero {
 ========================================================= */
 
 .del {
-
     border: 1px solid #ffd5d2;
 
     background: var(--red-soft);
-
     color: var(--red);
 
     padding: 8px 10px;
@@ -1824,11 +1491,9 @@ td input.zero {
     border-radius: 7px;
 
     font-weight: 800;
-
     font-size: 10px;
 
     cursor: pointer;
-
     white-space: nowrap;
 
     transition:
@@ -1838,7 +1503,6 @@ td input.zero {
 }
 
 .del:hover {
-
     background: var(--red);
 
     color: #fff;
@@ -1856,13 +1520,11 @@ td input.zero {
 ========================================================= */
 
 .emptyState {
-
     display: none;
 
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 55px 20px;
@@ -1871,7 +1533,6 @@ td input.zero {
 }
 
 .emptyState i {
-
     width: 58px;
     height: 58px;
 
@@ -1891,18 +1552,13 @@ td input.zero {
 }
 
 .emptyState h3 {
-
     color: var(--primary);
-
     font-size: 15px;
 }
 
 .emptyState p {
-
     color: var(--muted);
-
     font-size: 11px;
-
     margin-top: 6px;
 }
 
@@ -1912,15 +1568,12 @@ td input.zero {
 ========================================================= */
 
 .modal {
-
     position: fixed;
-
     inset: 0;
 
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 20px;
@@ -1929,16 +1582,13 @@ td input.zero {
         rgba(11,19,43,0.72);
 
     backdrop-filter: blur(7px);
-
     -webkit-backdrop-filter: blur(7px);
 
     z-index: 100000;
 }
 
 .modalBox {
-
     width: 100%;
-
     max-width: 400px;
 
     background: #fff;
@@ -1957,13 +1607,7 @@ td input.zero {
     animation: popupIn 0.22s ease;
 }
 
-
-/* =========================================================
-   MODAL ICON
-========================================================= */
-
 .modalIcon {
-
     width: 62px;
     height: 62px;
 
@@ -1972,11 +1616,9 @@ td input.zero {
     border-radius: 18px;
 
     background: var(--red-soft);
-
     color: var(--red);
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -1986,30 +1628,20 @@ td input.zero {
 }
 
 .saveIcon {
-
     background: var(--green-soft);
-
     color: var(--green);
 
     border-color: #ccebd9;
 }
 
-
-/* =========================================================
-   MODAL TEXT
-========================================================= */
-
 .modalBox h3 {
-
     color: var(--primary);
 
     font-size: 19px;
-
     font-weight: 800;
 }
 
 .modalBox p {
-
     margin: 10px auto 23px;
 
     max-width: 320px;
@@ -2022,19 +1654,11 @@ td input.zero {
 }
 
 .modalBox p strong {
-
     color: var(--primary);
-
     font-weight: 800;
 }
 
-
-/* =========================================================
-   MODAL BUTTONS
-========================================================= */
-
 .modalActions {
-
     display: flex;
 
     gap: 10px;
@@ -2043,7 +1667,6 @@ td input.zero {
 }
 
 .modalActions button {
-
     flex: 1;
 
     border: none;
@@ -2055,7 +1678,6 @@ td input.zero {
     border-radius: 9px;
 
     font-size: 11px;
-
     font-weight: 800;
 
     cursor: pointer;
@@ -2074,7 +1696,6 @@ td input.zero {
 }
 
 .noBtn {
-
     background: #f2f4f7;
 
     color: var(--text);
@@ -2087,9 +1708,7 @@ td input.zero {
 }
 
 .yesBtn {
-
     background: var(--red);
-
     color: #fff;
 
     box-shadow:
@@ -2101,9 +1720,7 @@ td input.zero {
 }
 
 .saveConfirmBtn {
-
     background: var(--green);
-
     color: #fff;
 
     box-shadow:
@@ -2120,29 +1737,24 @@ td input.zero {
 ========================================================= */
 
 .loaderOverlay {
-
     position: fixed;
-
     inset: 0;
 
     display: none;
 
     align-items: center;
-
     justify-content: center;
 
     background:
         rgba(255,255,255,0.94);
 
     backdrop-filter: blur(5px);
-
     -webkit-backdrop-filter: blur(5px);
 
     z-index: 99999;
 }
 
 .loaderBox {
-
     min-width: 150px;
 
     padding: 24px 20px;
@@ -2159,14 +1771,12 @@ td input.zero {
 }
 
 .spinner {
-
     width: 48px;
     height: 48px;
 
     border: 4px solid #e7ebf2;
 
     border-top-color: var(--primary);
-
     border-right-color: var(--accent);
 
     border-radius: 50%;
@@ -2178,11 +1788,9 @@ td input.zero {
 }
 
 .loaderBox p {
-
     color: var(--primary);
 
     font-size: 12px;
-
     font-weight: 800;
 }
 
@@ -2192,7 +1800,6 @@ td input.zero {
 ========================================================= */
 
 .siteFooter {
-
     margin-top: 30px;
 
     background:
@@ -2208,7 +1815,6 @@ td input.zero {
 }
 
 .footerContent {
-
     max-width: 1500px;
 
     margin: auto;
@@ -2218,23 +1824,19 @@ td input.zero {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
 }
 
 .footerBrand {
-
     display: flex;
-
     align-items: center;
 
     gap: 12px;
 }
 
 .footerLogo {
-
     width: 44px;
     height: 44px;
 
@@ -2246,7 +1848,6 @@ td input.zero {
     border: 1px solid rgba(201,162,39,0.18);
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -2256,14 +1857,11 @@ td input.zero {
 }
 
 .footerBrand h3 {
-
     font-size: 13px;
-
     font-weight: 800;
 }
 
 .footerBrand p {
-
     margin-top: 4px;
 
     color: rgba(255,255,255,0.60);
@@ -2272,9 +1870,7 @@ td input.zero {
 }
 
 .footerInfo {
-
     display: flex;
-
     align-items: center;
 
     gap: 18px;
@@ -2283,9 +1879,7 @@ td input.zero {
 }
 
 .footerInfo span {
-
     display: flex;
-
     align-items: center;
 
     gap: 6px;
@@ -2293,19 +1887,15 @@ td input.zero {
     color: rgba(255,255,255,0.68);
 
     font-size: 10px;
-
     font-weight: 600;
 }
 
 .footerInfo i {
-
     font-size: 11px;
-
     color: var(--accent-light);
 }
 
 .footerBottom {
-
     border-top:
         1px solid rgba(255,255,255,0.08);
 
@@ -2318,25 +1908,20 @@ td input.zero {
     display: flex;
 
     justify-content: space-between;
-
     align-items: center;
 
     gap: 15px;
 }
 
 .footerBottom p {
-
     color: rgba(255,255,255,0.45);
 
     font-size: 9px;
-
     font-weight: 500;
 }
 
 .footerCredit strong {
-
     color: var(--accent-light);
-
     font-weight: 800;
 }
 
@@ -2346,7 +1931,6 @@ td input.zero {
 ========================================================= */
 
 @keyframes loginAppear {
-
     from {
         opacity: 0;
         transform: translateY(15px) scale(0.98);
@@ -2359,7 +1943,6 @@ td input.zero {
 }
 
 @keyframes panelAppear {
-
     from {
         opacity: 0;
         transform: translateY(-5px);
@@ -2372,7 +1955,6 @@ td input.zero {
 }
 
 @keyframes popupIn {
-
     from {
         opacity: 0;
         transform: scale(0.94) translateY(10px);
@@ -2385,7 +1967,6 @@ td input.zero {
 }
 
 @keyframes spin {
-
     from {
         transform: rotate(0deg);
     }
@@ -2403,27 +1984,21 @@ td input.zero {
 @media (max-width: 900px) {
 
     .mainHeader {
-
         padding: 12px 18px;
-
         flex-wrap: wrap;
     }
 
     .headerButtons {
-
         width: 100%;
-
         justify-content: flex-end;
     }
 
     .wrap {
-
         padding: 18px;
     }
 
     .footerContent,
     .footerBottom {
-
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -2441,19 +2016,14 @@ td input.zero {
     }
 
     .loginBox {
-
         max-width: 430px;
-
         padding: 32px 19px;
-
         border-radius: 18px;
     }
 
     .loginLogo {
-
         width: 62px;
         height: 62px;
-
         font-size: 25px;
     }
 
@@ -2466,45 +2036,38 @@ td input.zero {
     }
 
     .loginBox input {
-
         min-height: 46px;
-
         font-size: 16px;
     }
 
     .loginBtn {
-
         min-height: 48px;
     }
 
 
-    /* Header */
+    /* =====================================================
+       HEADER
+    ===================================================== */
 
     .mainHeader {
-
         position: relative;
 
         padding: 15px 12px;
 
         flex-direction: column;
-
         align-items: stretch;
 
         gap: 13px;
     }
 
     .headerTitle {
-
         justify-content: center;
-
         text-align: center;
     }
 
     .headerTitle > i {
-
         width: 42px;
         height: 42px;
-
         font-size: 19px;
     }
 
@@ -2517,10 +2080,11 @@ td input.zero {
     }
 
 
-    /* Buttons */
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
 
     .headerButtons {
-
         width: 100%;
 
         display: grid;
@@ -2531,7 +2095,6 @@ td input.zero {
     }
 
     .headerButtons .btn {
-
         width: 100%;
 
         min-height: 44px;
@@ -2540,32 +2103,30 @@ td input.zero {
     }
 
 
-    /* Main */
+    /* =====================================================
+       MAIN
+    ===================================================== */
 
     .wrap {
-
         padding: 10px;
     }
 
 
-    /* Cards */
+    /* =====================================================
+       CARDS
+    ===================================================== */
 
     .top {
-
         grid-template-columns: 1fr;
-
         gap: 10px;
     }
 
     .card {
-
         padding: 16px;
-
         border-radius: 14px;
     }
 
     .cardIcon {
-
         width: 46px;
         height: 46px;
 
@@ -2579,20 +2140,21 @@ td input.zero {
     }
 
 
-    /* Search */
+    /* =====================================================
+       SEARCH
+    ===================================================== */
 
     .searchBox input {
-
         min-height: 45px;
-
         font-size: 16px;
     }
 
 
-    /* Year */
+    /* =====================================================
+       YEAR
+    ===================================================== */
 
     .yearBar {
-
         display: grid;
 
         grid-template-columns: 1fr;
@@ -2605,14 +2167,11 @@ td input.zero {
     }
 
     .yearSelectBox {
-
         justify-content: space-between;
     }
 
     #yearSelect {
-
         min-height: 43px;
-
         font-size: 16px;
     }
 
@@ -2621,33 +2180,31 @@ td input.zero {
     }
 
 
-    /* Add member */
+    /* =====================================================
+       ADD MEMBER
+    ===================================================== */
 
     .panel {
-
         padding: 13px;
-
         border-radius: 14px;
     }
 
     .addMemberForm {
-
         flex-direction: column;
     }
 
     .addMemberForm input,
     .addMemberForm button {
-
         width: 100%;
-
         min-height: 44px;
     }
 
 
-    /* Table */
+    /* =====================================================
+       TABLE - MOBILE
+    ===================================================== */
 
     .tableHeader {
-
         padding: 15px;
 
         align-items: flex-start;
@@ -2669,6 +2226,11 @@ td input.zero {
         min-width: 1050px;
     }
 
+
+    /* =====================================================
+       MOBILE STICKY NAME COLUMN
+    ===================================================== */
+
     .scroll th:first-child,
     .scroll td:first-child {
         min-width: 170px;
@@ -2676,39 +2238,46 @@ td input.zero {
     }
 
     .scroll th:first-child {
-        z-index: 50;
+        position: sticky;
+
+        top: 0;
+        left: 0;
+
+        z-index: 100;
     }
 
     .scroll td:first-child {
-        z-index: 15;
+        position: sticky;
+
+        left: 0;
+
+        z-index: 30;
+
+        background: #fff;
     }
 
     .scroll td input {
-
         min-width: 72px;
-
         min-height: 40px;
 
         font-size: 16px;
     }
 
     .del {
-
         min-height: 40px;
-
         padding: 8px 10px;
     }
 
 
-    /* Modals */
+    /* =====================================================
+       MODALS
+    ===================================================== */
 
     .modal {
-
         padding: 12px;
     }
 
     .modalBox {
-
         max-width: 390px;
 
         padding: 26px 18px;
@@ -2717,7 +2286,6 @@ td input.zero {
     }
 
     .modalActions {
-
         display: grid;
 
         grid-template-columns: 1fr 1fr;
@@ -2726,15 +2294,15 @@ td input.zero {
     }
 
     .modalActions button {
-
         min-height: 44px;
     }
 
 
-    /* Footer */
+    /* =====================================================
+       FOOTER
+    ===================================================== */
 
     .footerContent {
-
         flex-direction: column;
 
         align-items: center;
@@ -2745,28 +2313,23 @@ td input.zero {
     }
 
     .footerBrand {
-
         flex-direction: column;
 
         gap: 8px;
     }
 
     .footerBrand p {
-
         max-width: 280px;
 
         line-height: 1.5;
     }
 
     .footerInfo {
-
         justify-content: center;
-
         gap: 11px;
     }
 
     .footerBottom {
-
         flex-direction: column;
 
         text-align: center;
@@ -2785,7 +2348,6 @@ td input.zero {
 @media (max-width: 420px) {
 
     .loginBox {
-
         padding: 27px 15px;
     }
 
@@ -2811,10 +2373,8 @@ td input.zero {
 
     .scroll th:first-child,
     .scroll td:first-child {
-
-    min-width: 155px;
-    
-    width: 155px;
+        min-width: 155px;
+        width: 155px;
     }
 
     .tableHeader {
@@ -2832,13 +2392,9 @@ td input.zero {
     *,
     *::before,
     *::after {
-
         animation-duration: 0.01ms !important;
-
         animation-iteration-count: 1 !important;
-
         transition-duration: 0.01ms !important;
-
         scroll-behavior: auto !important;
     }
 }
