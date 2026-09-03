@@ -503,7 +503,6 @@ function markDirty() {
 function updateInput(input) {
 
     const index = Number(input.dataset.index);
-
     const month = input.dataset.month;
 
     if (
@@ -513,47 +512,66 @@ function updateInput(input) {
         return;
     }
 
-    let value = Number(input.value);
+    const rawValue = input.value.trim();
 
-    if (!Number.isFinite(value) || value < 0) {
-        value = 0;
+    // Allow the cell to be completely empty while typing
+    if (rawValue === "") {
+        db[index].c[month] = 0;
+        input.classList.add("zero");
+
+        const row = input.closest("tr");
+
+        if (row) {
+            const total = MONTHS.reduce((sum, mon) => {
+                return sum + Number(db[index].c[mon] || 0);
+            }, 0);
+
+            const totalElement = row.querySelector(".memberTotal");
+
+            if (totalElement) {
+                totalElement.textContent = money(total);
+            }
+        }
+
+        calc();
+        markDirty();
+        return;
     }
 
-    value = Math.round(value * 100) / 100;
+    // Allow normal decimal typing
+    const value = Number(rawValue);
 
-    db[index].c[month] = value;
+    if (!Number.isFinite(value) || value < 0) {
+        return;
+    }
 
-    input.value = value.toFixed(2);
+    const roundedValue = Math.round(value * 100) / 100;
 
-    input.classList.toggle(
-        "zero",
-        value === 0
-    );
+    // Save the value internally
+    db[index].c[month] = roundedValue;
+
+    // IMPORTANT:
+    // Do NOT change input.value here.
+    // This allows the user to type naturally.
+    input.classList.toggle("zero", roundedValue === 0);
 
     const row = input.closest("tr");
 
     if (row) {
 
         const total = MONTHS.reduce((sum, mon) => {
-
-            return sum +
-                Number(db[index].c[mon] || 0);
-
+            return sum + Number(db[index].c[mon] || 0);
         }, 0);
 
-        const totalElement =
-            row.querySelector(".memberTotal");
+        const totalElement = row.querySelector(".memberTotal");
 
         if (totalElement) {
             totalElement.textContent = money(total);
         }
-
     }
 
     calc();
-
     markDirty();
-
 }
 
 
@@ -930,23 +948,33 @@ if (tableBody) {
 
     });
 
-    tableBody.addEventListener("blur", event => {
+   tableBody.addEventListener("blur", event => {
 
-        const input =
-            event.target.closest("input[data-index]");
+    const input = event.target.closest("input[data-index]");
 
-        if (input) {
+    if (!input) return;
 
-            const value = Number(input.value);
+    const rawValue = input.value.trim();
 
-            input.value =
-                Number.isFinite(value) && value >= 0
-                    ? value.toFixed(2)
-                    : "0.00";
+    // If completely cleared, keep it empty
+    if (rawValue === "") {
+        input.value = "";
+        input.classList.add("zero");
+        return;
+    }
 
-        }
+    const value = Number(rawValue);
 
-    }, true);
+    if (!Number.isFinite(value) || value < 0) {
+        input.value = "0.00";
+        input.classList.add("zero");
+        return;
+    }
+
+    // Format to 2 decimal places when leaving the cell
+    input.value = value.toFixed(2);
+
+}, true);
 
 
     tableBody.addEventListener("click", event => {
