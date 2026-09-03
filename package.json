@@ -8,8 +8,11 @@
     "start": "node server.js",
     "dev": "node server.js"
   },
-  "dependencies": {
-    "express": "^5.1.0",
-    "pg": "^8.16.3"
-  }
+
+  
+"dependencies": {
+  "express": "^5.1.0",
+  "pg": "^8.16.3",
+  "helmet": "^8.1.0",
+  "express-rate-limit": "^8.1.0"
 }
