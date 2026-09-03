@@ -1,0 +1,15 @@
+{
+  "name": "cake-staff-welfare",
+  "version": "2.0.0",
+  "private": true,
+  "description": "CAKE Staffs Welfare contribution management system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}

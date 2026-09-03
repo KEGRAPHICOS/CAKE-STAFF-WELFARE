@@ -1,0 +1,99 @@
+:root {
+  --primary: #091625;
+  --accent: #143050;
+  --light: #5680e0;
+  --dark: #103255;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, var(--primary), var(--light));
+  color: white;
+  text-align: center;
+  overflow: hidden; /* prevents scroll during animation */
+}
+
+.landing-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 20px;
+  transform: translateX(100%);  /* start off-screen right */
+  opacity: 0;
+  animation: slideIn 0.1s forwards; /* slide-in on load */
+}
+
+.welcome-logo {
+  width: 100px;          /* adjust size if needed */
+  margin-bottom: 20px;
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.landing-container.slide-out {
+  transform: translateX(-50%); /* slide out to left */
+  opacity: 0;
+  transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out;
+}
+
+.landing-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.landing-container p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+.btn-enter {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  background: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-enter:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(0.9);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 0.6rem;
+  color: #bfc6ce;
+
+}
+
+/* Responsive landing page */
+html { -webkit-text-size-adjust: 100%; }
+body { min-width: 320px; }
+.landing-container { width: min(100%, 900px); padding: clamp(18px, 5vw, 40px); }
+.welcome-logo { width: clamp(72px, 18vw, 120px); max-width: 35vw; height: auto; }
+.landing-container h1 { font-size: clamp(1.35rem, 5vw, 2.5rem); line-height: 1.15; }
+.landing-container p { font-size: clamp(.95rem, 3vw, 1.2rem); line-height: 1.5; margin-bottom: clamp(24px, 7vw, 40px); }
+.btn-enter { min-height: 48px; padding: 12px clamp(24px, 7vw, 35px); font-size: clamp(1rem, 3vw, 1.2rem); }
+@media (max-width: 480px) {
+  .landing-container h1 { max-width: 330px; margin-left: auto; margin-right: auto; }
+  .landing-container p { max-width: 300px; margin-left: auto; margin-right: auto; }
+  footer { margin-top: 45px; }
+}
