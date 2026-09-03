@@ -679,7 +679,7 @@ button {
     font-weight: 600;
 
     opacity: 0.7;
-    
+
     letter-spacing: 1.5px;
 }
 
@@ -767,19 +767,24 @@ button {
 /* Logout */
 
 .out {
-
-    background: rgba(217,45,32,0.12);
-
-    color: #ffb4ae;
-
-    border-color: rgba(255,255,255,0.08);
+    background: #dc2626;
+    color: #ffffff;
+    border-color: #dc2626;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.22);
 }
 
 .out:hover {
+    background: #000000;
+    color: #ffffff;
+    border-color: #000000;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-1px);
+}
 
-    background: var(--red);
-
-    color: #fff;
+.out:active {
+    background: #111111;
+    border-color: #111111;
+    transform: translateY(0);
 }
 
 
