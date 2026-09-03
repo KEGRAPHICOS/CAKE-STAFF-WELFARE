@@ -1,60 +1,149 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Department Representatives</title>
-  <link rel="stylesheet" href="reps.css">
-</head>
-<body>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Department Representatives | Contribution Management System</title> <link rel="stylesheet" href="reps.css"> </head> <body> <header class="top-header">
+<div class="header-content">
 
-  <header>
+  <div class="header-text">
+    <span class="eyebrow">STAFF WELFARE</span>
     <h1>Department Representatives</h1>
-    <p>Staff Welfare Contribution</p>
+    <p>Contact your department representative for contribution assistance.</p>
+  </div>
 
-        <a href="index.html" class="home-icon" title="Home">
-          <!-- Simple SVG Home Icon -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-          </svg>
-        </a>
+  <a href="index.html" class="home-button" title="Return to Home" aria-label="Return to Home">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+    <span>Home</span>
+  </a>
 
-  </header>
+</div>
 
-  <main class="container">
+</header> <main class="container">
+<div class="section-heading">
+  <div>
+    <span class="section-label">CONTACT DIRECTORY</span>
+    <h2>Our Representatives</h2>
+  </div>
 
-    <div class="rep-card">
-      <h2>Packaging Shift A</h2>
-      <p><strong>Representative:</strong> Richard Adomey</p>
-      <p><strong>Phone:</strong> 024 330 2352</p>
+  <p>Select a representative below for assistance.</p>
+</div>
+
+
+<div class="rep-grid">
+
+  <!-- Packaging -->
+  <article class="rep-card">
+
+    <div class="card-top">
+      <div class="department-icon">📦</div>
+      <span class="department-tag">SHIFT A</span>
     </div>
 
-    <div class="rep-card">
-      <h2>Production Shift B</h2>
-      <p><strong>Representative:</strong> Daniel Darko</p>
-      <p><strong>Phone:</strong> 054 217 3714</p>
+    <h3>Packaging</h3>
+
+    <div class="representative">
+      <div class="avatar">RA</div>
+
+      <div>
+        <span class="label">Representative</span>
+        <strong>Richard Adomey</strong>
+      </div>
     </div>
 
-    <div class="rep-card">
-      <h2>Quality Assurance</h2>
-      <p><strong>Representative:</strong> Isaac Mensah</p>
-      <p><strong>Phone:</strong> 057 270 4666</p>
+    <a href="tel:0243302352" class="phone-button">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      024 330 2352
+    </a>
+
+  </article>
+
+
+  <!-- Production -->
+  <article class="rep-card">
+
+    <div class="card-top">
+      <div class="department-icon">⚙️</div>
+      <span class="department-tag">SHIFT B</span>
     </div>
 
-    <div class="rep-card">
-      <h2>Maintenance</h2>
-      <p><strong>Representative:</strong> Robert Kwateng</p>
-      <p><strong>Phone:</strong> 054 965 8686</p>
+    <h3>Production</h3>
+
+    <div class="representative">
+      <div class="avatar">DD</div>
+
+      <div>
+        <span class="label">Representative</span>
+        <strong>Daniel Darko</strong>
+      </div>
     </div>
 
-  </main>
+    <a href="tel:0542173714" class="phone-button">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      054 217 3714
+    </a>
 
-<footer>
-  © 2026 Contribution Management System<br> KE GRAPHICOS
-</footer>
+  </article>
 
-<script src="reps.js"></script>
 
-</body>
-</html>
+  <!-- Quality Assurance -->
+  <article class="rep-card">
 
+    <div class="card-top">
+      <div class="department-icon">✓</div>
+      <span class="department-tag">QA</span>
+    </div>
+
+    <h3>Quality Assurance</h3>
+
+    <div class="representative">
+      <div class="avatar">IM</div>
+
+      <div>
+        <span class="label">Representative</span>
+        <strong>Isaac Mensah</strong>
+      </div>
+    </div>
+
+    <a href="tel:0572704666" class="phone-button">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      057 270 4666
+    </a>
+
+  </article>
+
+
+  <!-- Maintenance -->
+  <article class="rep-card">
+
+    <div class="card-top">
+      <div class="department-icon">🔧</div>
+      <span class="department-tag">TECHNICAL</span>
+    </div>
+
+    <h3>Maintenance</h3>
+
+    <div class="representative">
+      <div class="avatar">RK</div>
+
+      <div>
+        <span class="label">Representative</span>
+        <strong>Robert Kwateng</strong>
+      </div>
+    </div>
+
+    <a href="tel:0549658686" class="phone-button">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.61 21 3 13.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+      </svg>
+      054 965 8686
+    </a>
+
+  </article>
+
+</div>
+
+</main> <footer> <p>© 2026 Contribution Management System</p> <span>KE GRAPHICOS</span> </footer> <script src="reps.js"></script> </body> </html>

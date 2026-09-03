@@ -1,36 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CAKE Staffs Welfare — 2026</title>
-<link rel="stylesheet" href="style2026.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CAKE Staffs Welfare | 2026</title>
+
+  <link rel="stylesheet" href="style2026.css">
 </head>
+
 <body data-year="2026">
-<header>
-  <span class="header-title">Cake Staffs Welfare Contribution Records '26</span>
-  <div class="menu-container">
-    <div class="menu-icon" id="menuIcon" aria-label="Menu">&#9776;</div>
-    <ul class="menu-links" id="menuLinks">
-      <li><a href="index.html" class="home-icon" title="Home"><svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a></li>
-      <li><a href="2026.html">2026</a></li><li><a href="2027.html">2027</a></li><li><a href="2028.html">2028</a></li><hr><li><a href="reps.html">REPS</a></li>
-    </ul>
-  </div>
-</header>
-<div class="container">
-  <div class="cards">
-    <div class="card"><h3>Total Contributions - 2026</h3><p id="totalContribution">GHS 0.00</p></div>
-    <div class="card"><h3>Total Members</h3><p id="totalMembers">0</p></div>
-  </div>
-  <div id="statusMessage" class="data-status" aria-live="polite">Loading records...</div>
-  <div class="table-wrapper">
-    <table id="contributionTable">
-      <thead><tr><th class="title">Names</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Total</th></tr></thead>
-      <tbody></tbody>
-    </table>
-  </div>
-</div>
-<footer>© 2026 Contribution Management System<br>KE GRAPHICOS</footer>
-<script src="script.js"></script>
+
+  <!-- ================= HEADER ================= -->
+  <header class="topbar">
+
+    <div class="brand">
+      <div class="brand-icon">CW</div>
+
+      <div class="brand-text">
+        <strong>CAKE STAFFS WELFARE</strong>
+        <span>Contribution Management System</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+
+      <span class="year-badge">2026 RECORDS</span>
+
+      <div class="menu-container">
+
+        <button
+          class="menu-icon"
+          id="menuIcon"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="menu-links" id="menuLinks">
+
+          <li>
+            <a href="index.html" class="home-link">
+              <span>⌂</span>
+              <span>Home</span>
+            </a>
+          </li>
+
+          <li class="menu-label">YEARS</li>
+
+          <li><a href="2026.html" class="active">2026</a></li>
+          <li><a href="2027.html">2027</a></li>
+          <li><a href="2028.html">2028</a></li>
+
+          <li class="menu-divider"></li>
+
+          <li>
+            <a href="reps.html" class="reps-link">
+              <span>▣</span>
+              <span>REPS</span>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container">
+
+    <!-- Page heading -->
+    <section class="page-heading">
+
+      <div>
+        <span class="eyebrow">WELFARE MANAGEMENT</span>
+
+        <h1>Contribution Overview</h1>
+
+        <p>
+          Review member contributions and monthly payment records.
+        </p>
+      </div>
+
+      <div class="year-display">
+        <span>YEAR</span>
+        <strong>2026</strong>
+      </div>
+
+    </section>
+
+
+    <!-- ================= SUMMARY CARDS ================= -->
+    <section class="cards">
+
+      <div class="card contribution-card">
+
+        <div class="card-top">
+          <span class="card-label">TOTAL CONTRIBUTIONS</span>
+          <div class="card-icon">₵</div>
+        </div>
+
+        <h2 id="totalContribution">GHS 0.00</h2>
+
+        <div class="card-bottom">
+          <span class="card-status">
+            <span class="status-dot"></span>
+            Live total
+          </span>
+          <span class="card-year">2026</span>
+        </div>
+
+      </div>
+
+
+      <div class="card members-card">
+
+        <div class="card-top">
+          <span class="card-label">TOTAL MEMBERS</span>
+          <div class="card-icon">♙</div>
+        </div>
+
+        <h2 id="totalMembers">0</h2>
+
+        <div class="card-bottom">
+          <span class="card-status">
+            <span class="status-dot"></span>
+            Registered members
+          </span>
+          <span class="card-year">2026</span>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= STATUS ================= -->
+    <div id="statusMessage" class="data-status" aria-live="polite">
+      <span class="status-loader"></span>
+      Loading records...
+    </div>
+
+
+    <!-- ================= TABLE SECTION ================= -->
+    <section class="records-section">
+
+      <div class="records-header">
+
+        <div>
+          <span class="eyebrow">MEMBER RECORDS</span>
+          <h2>Monthly Contributions</h2>
+        </div>
+
+        <div class="records-info">
+          <span class="records-dot"></span>
+          <span>2026</span>
+        </div>
+
+      </div>
+
+
+      <div class="table-wrapper">
+
+        <table id="contributionTable">
+
+          <thead>
+            <tr>
+              <th class="title">MEMBER NAME</th>
+              <th>JAN</th>
+              <th>FEB</th>
+              <th>MAR</th>
+              <th>APR</th>
+              <th>MAY</th>
+              <th>JUN</th>
+              <th>JUL</th>
+              <th>AUG</th>
+              <th>SEP</th>
+              <th>OCT</th>
+              <th>NOV</th>
+              <th>DEC</th>
+              <th>TOTAL</th>
+            </tr>
+          </thead>
+
+          <tbody></tbody>
+
+        </table>
+
+      </div>
+
+      <div class="table-footer">
+        <span>Scroll horizontally to view all months</span>
+        <span>All amounts in Ghana Cedis (GHS)</span>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <strong>CAKE STAFFS WELFARE</strong>
+    <span>Contribution Management System</span>
+    <span class="footer-divider">•</span>
+    <span>© 2026</span>
+    <span class="footer-divider">•</span>
+    <span>KE GRAPHICOS</span>
+  </footer>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
