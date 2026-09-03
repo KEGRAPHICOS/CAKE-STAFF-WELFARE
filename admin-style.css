@@ -625,60 +625,63 @@ button {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
-    gap: 13px;
+    justify-content: center;
 
-    min-width: 0;
+    text-align: center;
+
+    gap: 8px;
 }
 
 .headerTitle > i {
 
-    width: 44px;
-    height: 44px;
+    width: 52px;
 
-    border-radius: 12px;
+    height: 52px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
-    background:
-        rgba(201,162,39,0.13);
+    border-radius: 14px;
 
-    border: 1px solid rgba(201,162,39,0.20);
+    background: rgba(20, 184, 166, 0.15);
 
-    color: var(--accent-light);
+    color: #14b8a6;
 
-    font-size: 20px;
+    font-size: 25px;
 
-    flex-shrink: 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-.headerTitle h1 {
+.headerText h1 {
 
-    font-size: 17px;
+    margin: 0;
+
+    font-size: 22px;
 
     font-weight: 800;
 
-    line-height: 1.3;
-
-    letter-spacing: -0.2px;
+    letter-spacing: 0.5px;
 }
 
-.headerTitle p {
+.headerText p {
 
-    font-size: 9px;
+    margin: 4px 0 0;
 
-    color: rgba(255,255,255,0.62);
+    font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 600;
 
-    margin-top: 3px;
-
-    letter-spacing: 1px;
+    opacity: 0.7;
+    
+    letter-spacing: 1.5px;
 }
-
 
 /* =========================================================
    HEADER BUTTONS
