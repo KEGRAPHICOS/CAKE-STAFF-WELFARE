@@ -1312,16 +1312,17 @@ button {
 ========================================================= */
 
 .tableBox {
-
     background: #fff;
 
     border: 1px solid var(--border-light);
 
     border-radius: var(--radius-lg);
 
-    overflow: hidden;
+    overflow: visible;
 
     box-shadow: var(--shadow);
+
+    position: relative;
 }
 
 
@@ -1405,18 +1406,13 @@ button {
 ========================================================= */
 
 .scroll {
-
     width: 100%;
-
     overflow-x: auto;
-
     overflow-y: visible;
-
     -webkit-overflow-scrolling: touch;
-
     scrollbar-width: thin;
-
     scrollbar-color: #cbd5e1 transparent;
+    position: relative;
 }
 
 .scroll::-webkit-scrollbar {
@@ -1428,9 +1424,7 @@ button {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-
     background: #cbd5e1;
-
     border-radius: 10px;
 }
 
@@ -1438,16 +1432,180 @@ button {
     background: #94a3b8;
 }
 
-
 table {
-
     width: 100%;
-
     min-width: 1050px;
-
     border-collapse: separate;
-
     border-spacing: 0;
+}
+
+/* =========================================================
+   STICKY TABLE HEADER
+========================================================= */
+
+thead {
+    position: sticky;
+    top: 0;
+    z-index: 25;
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    color: #fff;
+    padding: 13px 9px;
+    font-size: 9px;
+    font-weight: 800;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--accent);
+}
+
+/* =========================================================
+   STICKY NAME HEADER
+========================================================= */
+
+th:first-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 40;
+    min-width: 190px;
+    width: 190px;
+    text-align: left;
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+    box-shadow:
+        4px 0 10px rgba(16,24,40,0.10);
+}
+
+th:last-child {
+    min-width: 110px;
+}
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+td {
+    padding: 9px 8px;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 11px;
+    white-space: nowrap;
+    background: #fff;
+    text-align: center;
+    transition: background 0.15s ease;
+}
+
+tbody tr:hover td {
+    background: #fafbfc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* =========================================================
+   STICKY MEMBER NAME COLUMN
+========================================================= */
+
+td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 15;
+    min-width: 190px;
+    width: 190px;
+    background: #fff;
+    text-align: left;
+    box-shadow:
+        4px 0 10px rgba(16,24,40,0.05);
+}
+
+tbody tr:hover td:first-child {
+    background: #fafbfc;
+}
+
+td:first-child b {
+    display: block;
+    color: var(--text-dark);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   STICKY HEADER + NAME COLUMN LAYER
+========================================================= */
+
+thead th:first-child {
+    z-index: 50;
+}
+
+thead th {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+}
+
+tbody td:first-child {
+    background: #fff;
+}
+
+tbody tr:hover td:first-child {
+    background: #fafbfc;
+}
+
+/* =========================================================
+   CONTRIBUTION INPUTS
+========================================================= */
+
+td input {
+    width: 70px;
+    min-height: 34px;
+    padding: 7px 6px;
+    border: 1px solid #d0d5dd;
+    border-radius: 7px;
+    background: #fff;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--primary);
+    outline: none;
+    transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
+}
+
+td input:hover {
+    border-color: #b7bec9;
+}
+
+td input:focus {
+    border-color: var(--primary-light);
+    background: #fff;
+    box-shadow:
+        0 0 0 3px rgba(36,59,103,0.07);
+}
+
+td input.zero {
+    color: var(--red);
+    background: var(--red-soft);
+    border-color: #f5c2bf;
 }
 
 
@@ -2513,10 +2671,16 @@ td input.zero {
 
     .scroll th:first-child,
     .scroll td:first-child {
-
         min-width: 170px;
-
         width: 170px;
+    }
+
+    .scroll th:first-child {
+        z-index: 50;
+    }
+
+    .scroll td:first-child {
+        z-index: 15;
     }
 
     .scroll td input {
@@ -2648,9 +2812,9 @@ td input.zero {
     .scroll th:first-child,
     .scroll td:first-child {
 
-        min-width: 155px;
-
-        width: 155px;
+    min-width: 155px;
+    
+    width: 155px;
     }
 
     .tableHeader {
