@@ -1,70 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Welcome | Cake Staff Welfare</title>
+    <title>Welcome | Cake Staff Welfare</title>
 
-  <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="welcome.css">
 </head>
 
 <body>
 
-  <!-- Background decoration -->
-  <div class="background-shape shape-one"></div>
-  <div class="background-shape shape-two"></div>
+    <!-- =====================================================
+         BACKGROUND DECORATION
+    ====================================================== -->
 
-  <main class="landing-container" id="landingContainer">
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
 
-    <section class="welcome-card">
 
-      <!-- Logo -->
-      <div class="logo-wrapper">
-        <img
-          src="Twi-logo.png"
-          alt="Cake Staff Welfare Logo"
-          class="welcome-logo"
-        >
-      </div>
+    <!-- =====================================================
+         WELCOME PAGE
+    ====================================================== -->
 
-      <!-- Small label -->
-      <span class="welcome-label">WELCOME TO</span>
+    <main class="landing-container" id="landingContainer">
 
-      <!-- Main heading -->
-      <h1>
-        CAKE STAFFS
-        <span>WELFARE</span>
-      </h1>
+        <section class="welcome-card">
 
-      <h2>CONTRIBUTION REVIEW</h2>
+            <!-- Logo -->
+            <div class="logo-wrapper">
 
-      <div class="heading-line"></div>
+                <img
+                    src="Twi-logo.png"
+                    alt="Cake Staff Welfare Logo"
+                    class="welcome-logo"
+                >
 
-      <!-- Description -->
-      <p class="welcome-description">
-        Track contributions, review member records,
-        and access welfare reports with ease.
-      </p>
+            </div>
 
-      <!-- Button -->
-      <button class="btn-enter" id="enterBtn">
-        <span>View Reports</span>
-        <span class="arrow">→</span>
-      </button>
 
-      <!-- Footer -->
-      <footer>
-        <span class="footer-dot">•</span>
-        <span>Version 3.0</span>
-        <span class="footer-dot">•</span>
-      </footer>
+            <!-- Small Label -->
+            <span class="welcome-label">
+                WELCOME TO
+            </span>
 
-    </section>
 
-  </main>
+            <!-- Main Heading -->
+            <h1>
+                CAKE STAFFS
+                <span>WELFARE</span>
+            </h1>
 
-  <script src="welcome.js"></script>
+
+            <h2>
+                CONTRIBUTION REVIEW
+            </h2>
+
+
+            <div class="heading-line"></div>
+
+
+            <!-- Description -->
+            <p class="welcome-description">
+                Track contributions, review member records,
+                and access welfare reports with ease.
+            </p>
+
+
+            <!-- View Reports Button -->
+            <button
+                class="btn-enter"
+                id="enterBtn"
+                type="button"
+            >
+
+                <span>
+                    View Reports
+                </span>
+
+                <span class="arrow">
+                    →
+                </span>
+
+            </button>
+
+
+            <!-- Footer -->
+            <footer>
+
+                <span class="footer-dot">
+                    •
+                </span>
+
+                <span>
+                    Version 3.0
+                </span>
+
+                <span class="footer-dot">
+                    •
+                </span>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         VIEW REPORTS LOADING SCREEN
+         Matches ADMIN dashboard loader
+    ====================================================== -->
+
+ <!-- =====================================================
+     VIEW REPORTS LOADING SCREEN
+====================================================== -->
+
+<div
+    class="reports-loader"
+    id="reportsLoader"
+    aria-hidden="true"
+>
+
+    <div class="reports-loader-box">
+
+            <div
+                class="reports-spinner"
+                aria-label="Loading"
+            ></div>
+
+            <p id="reportsLoaderText">
+                Connecting to reports...
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="welcome.js"></script>
 
 </body>
 </html>
