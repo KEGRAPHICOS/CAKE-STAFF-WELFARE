@@ -5,6 +5,7 @@
 
    ---------------------------------------------------------
    IMPORTANT:
+
    - No IDs changed
    - No classes changed
    - No JavaScript functionality changed
@@ -25,13 +26,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
     font-family:
         "Inter",
         "Segoe UI",
         Arial,
         sans-serif;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -40,30 +39,23 @@
     --primary: #16213e;
     --primary-dark: #0b132b;
     --primary-light: #243b67;
-
     --accent: #c9a227;
     --accent-light: #e5c65a;
     --accent-soft: #fff8df;
-
     --bg: #f4f6fa;
     --surface: #ffffff;
     --surface-soft: #f8fafc;
-
     --text: #172033;
     --text-dark: #101828;
     --muted: #667085;
-
     --border: #e4e7ec;
     --border-light: #eef1f5;
-
     --green: #16845b;
     --green-dark: #106b49;
     --green-soft: #eaf8f1;
-
     --red: #d92d20;
     --red-dark: #b42318;
     --red-soft: #fff1f0;
-
     --blue: #2563eb;
     --blue-soft: #eef4ff;
 
@@ -89,11 +81,8 @@
 html {
     width: 100%;
     min-height: 100%;
-
     -webkit-text-size-adjust: 100%;
-
     scroll-behavior: smooth;
-
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -175,18 +164,14 @@ button {
 #loginPage::before,
 #loginPage::after {
     content: "";
-
     position: absolute;
-
     border-radius: 50%;
-
     pointer-events: none;
 }
 
 #loginPage::before {
     width: 280px;
     height: 280px;
-
     top: -120px;
     right: -90px;
 
@@ -198,7 +183,6 @@ button {
 #loginPage::after {
     width: 220px;
     height: 220px;
-
     bottom: -100px;
     left: -70px;
 
@@ -242,7 +226,6 @@ button {
 
 .loginBox::before {
     content: "";
-
     position: absolute;
 
     top: 0;
@@ -305,21 +288,16 @@ button {
 
 .loginBox h1 {
     color: var(--primary);
-
     font-size: 19px;
     font-weight: 800;
-
     text-align: center;
-
     letter-spacing: -0.3px;
 }
 
 .loginBox h2 {
     color: var(--accent);
-
     font-size: 13px;
     font-weight: 800;
-
     text-align: center;
 
     margin-top: 6px;
@@ -329,10 +307,8 @@ button {
 
 .loginSubtitle {
     color: var(--muted);
-
     font-size: 12px;
     line-height: 1.6;
-
     text-align: center;
 
     margin:
@@ -366,7 +342,6 @@ button {
     width: 100%;
 
     padding: 13px 14px;
-
     margin-top: 8px;
 
     background: #fbfcfe;
@@ -461,7 +436,6 @@ button {
 
 .rememberLabel {
     display: flex;
-
     align-items: center;
 
     gap: 8px;
@@ -544,9 +518,7 @@ button {
 
 .loginBtn:disabled {
     opacity: 0.65;
-
     cursor: not-allowed;
-
     transform: none;
 }
 
@@ -605,10 +577,6 @@ button {
 
 /* =========================================================
    MAIN HEADER
-   ---------------------------------------------------------
-   CRITICAL FIX:
-   HEADER IS FIXED TO THE BROWSER VIEWPORT
-   AND WILL NEVER SCROLL WITH THE TABLE.
    ========================================================= */
 
 .mainHeader {
@@ -625,9 +593,7 @@ button {
     padding: 12px 28px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 20px;
@@ -675,7 +641,6 @@ button {
     flex-direction: column;
 
     align-items: center;
-
     justify-content: center;
 
     text-align: center;
@@ -688,7 +653,6 @@ button {
     height: 52px;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
@@ -853,7 +817,7 @@ button {
     margin: 0 auto;
 
     padding:
-        98px 28px 24px;
+        125px 28px 24px;
 
     overflow: visible;
 
@@ -1482,8 +1446,6 @@ button {
 
 /* =========================================================
    TABLE SCROLL AREA
-   ---------------------------------------------------------
-   HORIZONTAL ONLY
    ========================================================= */
 
 .scroll {
@@ -1544,8 +1506,6 @@ table {
 
 /* =========================================================
    TABLE HEAD
-   ---------------------------------------------------------
-   NOT VERTICALLY STICKY
    ========================================================= */
 
 thead {
@@ -1596,8 +1556,6 @@ th {
 
 /* =========================================================
    STICKY MEMBER NAME HEADER
-   ---------------------------------------------------------
-   HORIZONTAL ONLY
    ========================================================= */
 
 th:first-child {
@@ -1675,8 +1633,6 @@ tbody tr:last-child td {
 
 /* =========================================================
    STICKY MEMBER NAME COLUMN
-   ---------------------------------------------------------
-   HORIZONTAL ONLY
    ========================================================= */
 
 td:first-child {
@@ -2440,13 +2396,11 @@ td input.zero {
         justify-content: flex-end;
     }
 
-    /*
-       Header is still fixed,
-       so reserve enough space.
-    */
+    /* Reserve enough space below the fixed header */
+
     .wrap {
         padding:
-            115px 18px 18px;
+            140px 18px 18px;
     }
 
     .footerContent,
@@ -2468,11 +2422,9 @@ td input.zero {
         width: 100%;
 
         min-width: 320px;
-
         min-height: 100%;
 
         overflow-x: hidden;
-
         overflow-y: auto;
 
         -webkit-overflow-scrolling: touch;
@@ -2493,7 +2445,6 @@ td input.zero {
         overflow: visible;
 
         padding-top: 35px;
-
         padding-bottom: 35px;
     }
 
@@ -2537,9 +2488,6 @@ td input.zero {
 
     /* =====================================================
        MOBILE DASHBOARD HEADER
-       -----------------------------------------------------
-       CRITICAL:
-       REMAINS FIXED
        ===================================================== */
 
     .mainHeader {
@@ -2627,13 +2575,15 @@ td input.zero {
         width: 100%;
 
         /*
-           Mobile header is taller because it contains
-           title + buttons.
+          Mobile header is taller because it contains
+          title + buttons.
 
-           This keeps content below it.
+          Increased spacing keeps all dashboard
+          content completely below the fixed header.
         */
+
         padding:
-            250px 10px 10px;
+            285px 10px 10px;
 
         overflow: visible;
 
@@ -2780,7 +2730,6 @@ td input.zero {
         width: 100%;
 
         overflow-x: auto !important;
-
         overflow-y: hidden !important;
 
         -webkit-overflow-scrolling: touch;
@@ -2963,7 +2912,7 @@ td input.zero {
 
     .wrap {
         padding:
-            250px 8px 8px;
+            285px 8px 8px;
     }
 
     .card {
@@ -3056,10 +3005,6 @@ td input.zero {
 
 /* =========================================================
    FINAL HEADER SAFETY OVERRIDE
-   ---------------------------------------------------------
-   KEEP THIS AT THE VERY END.
-   It prevents any later CSS rule from accidentally
-   changing the dashboard header back to sticky/relative.
    ========================================================= */
 
 .mainHeader {
@@ -3083,8 +3028,6 @@ td input.zero {
 
 /* =========================================================
    FINAL TABLE SAFETY OVERRIDE
-   ---------------------------------------------------------
-   The table is NEVER allowed to vertically scroll.
    ========================================================= */
 
 .scroll {
