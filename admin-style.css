@@ -1,16 +1,19 @@
 /* =========================================================
    CAKE STAFF WELFARE
    PREMIUM ADMIN DASHBOARD
-   FINAL RESPONSIVE VERSION
+   FINAL FIXED-HEADER RESPONSIVE VERSION
+
    ---------------------------------------------------------
    IMPORTANT:
    - No IDs changed
    - No classes changed
    - No JavaScript functionality changed
    - No API/backend changes
-   - Full page vertical scrolling enabled
-   - Table scrolls horizontally only
+   - Main dashboard header stays FIXED
+   - Table scrolls horizontally ONLY
+   - Page scrolls vertically
    - Mobile responsive
+   - Fixed header cannot move with table
    ========================================================= */
 
 
@@ -34,7 +37,6 @@
 }
 
 :root {
-
     --primary: #16213e;
     --primary-dark: #0b132b;
     --primary-light: #243b67;
@@ -110,7 +112,6 @@ body {
         var(--bg);
 
     color: var(--text);
-
     line-height: 1.5;
 
     overflow-x: hidden;
@@ -140,7 +141,6 @@ button {
    ========================================================= */
 
 #loginPage {
-
     width: 100%;
     min-height: 100vh;
 
@@ -169,13 +169,11 @@ button {
         );
 
     position: relative;
-
     overflow: hidden;
 }
 
 #loginPage::before,
 #loginPage::after {
-
     content: "";
 
     position: absolute;
@@ -186,7 +184,6 @@ button {
 }
 
 #loginPage::before {
-
     width: 280px;
     height: 280px;
 
@@ -199,7 +196,6 @@ button {
 }
 
 #loginPage::after {
-
     width: 220px;
     height: 220px;
 
@@ -217,7 +213,6 @@ button {
    ========================================================= */
 
 .loginBox {
-
     position: relative;
     z-index: 2;
 
@@ -226,12 +221,14 @@ button {
 
     padding: 38px 32px;
 
-    background: rgba(255, 255, 255, 0.98);
+    background:
+        rgba(255, 255, 255, 0.98);
 
     border-radius: 22px;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.25);
+        0 30px 80px
+        rgba(0, 0, 0, 0.25);
 
     border:
         1px solid
@@ -244,7 +241,6 @@ button {
 }
 
 .loginBox::before {
-
     content: "";
 
     position: absolute;
@@ -270,11 +266,11 @@ button {
    ========================================================= */
 
 .loginLogo {
-
     width: 68px;
     height: 68px;
 
-    margin: 0 auto 18px;
+    margin:
+        0 auto 18px;
 
     border-radius: 18px;
 
@@ -308,7 +304,6 @@ button {
    ========================================================= */
 
 .loginBox h1 {
-
     color: var(--primary);
 
     font-size: 19px;
@@ -320,7 +315,6 @@ button {
 }
 
 .loginBox h2 {
-
     color: var(--accent);
 
     font-size: 13px;
@@ -334,16 +328,15 @@ button {
 }
 
 .loginSubtitle {
-
     color: var(--muted);
 
     font-size: 12px;
-
     line-height: 1.6;
 
     text-align: center;
 
-    margin: 9px 0 26px;
+    margin:
+        9px 0 26px;
 }
 
 
@@ -352,7 +345,6 @@ button {
    ========================================================= */
 
 .loginBox form > label:not(.rememberLabel) {
-
     display: block;
 
     font-size: 10px;
@@ -371,7 +363,6 @@ button {
    ========================================================= */
 
 .loginBox input {
-
     width: 100%;
 
     padding: 13px 14px;
@@ -401,7 +392,6 @@ button {
 }
 
 .loginBox input:focus {
-
     background: #fff;
 
     border-color:
@@ -418,9 +408,7 @@ button {
    ========================================================= */
 
 .passwordBox {
-
     position: relative;
-
     width: 100%;
 }
 
@@ -429,13 +417,13 @@ button {
 }
 
 .eye {
-
     position: absolute;
 
     right: 6px;
     top: 50%;
 
-    transform: translateY(-30%);
+    transform:
+        translateY(-30%);
 
     width: 40px;
     height: 40px;
@@ -460,7 +448,6 @@ button {
 }
 
 .eye:hover {
-
     color: var(--primary);
 
     background:
@@ -473,8 +460,8 @@ button {
    ========================================================= */
 
 .rememberLabel {
-
     display: flex;
+
     align-items: center;
 
     gap: 8px;
@@ -490,7 +477,6 @@ button {
 }
 
 .rememberLabel input {
-
     width: 16px;
     height: 16px;
 
@@ -508,7 +494,6 @@ button {
    ========================================================= */
 
 .loginBtn {
-
     width: 100%;
 
     margin-top: 22px;
@@ -546,7 +531,6 @@ button {
 }
 
 .loginBtn:hover {
-
     transform: translateY(-1px);
 
     box-shadow:
@@ -559,7 +543,6 @@ button {
 }
 
 .loginBtn:disabled {
-
     opacity: 0.65;
 
     cursor: not-allowed;
@@ -577,7 +560,6 @@ button {
    ========================================================= */
 
 .errorMessage {
-
     display: none;
 
     color: var(--red);
@@ -608,7 +590,6 @@ button {
    ========================================================= */
 
 #dashPage {
-
     display: none;
 
     width: 100%;
@@ -624,17 +605,20 @@ button {
 
 /* =========================================================
    MAIN HEADER
+   ---------------------------------------------------------
+   CRITICAL FIX:
+   HEADER IS FIXED TO THE BROWSER VIEWPORT
+   AND WILL NEVER SCROLL WITH THE TABLE.
    ========================================================= */
 
 .mainHeader {
+    position: fixed !important;
 
-    position: sticky;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 
-    top: 0;
-
-    z-index: 500;
-
-    width: 100%;
+    width: 100% !important;
 
     min-height: 74px;
 
@@ -664,6 +648,20 @@ button {
     box-shadow:
         0 4px 20px
         rgba(0, 0, 0, 0.12);
+
+    z-index: 99999 !important;
+
+    transform:
+        translate3d(0, 0, 0);
+
+    -webkit-transform:
+        translate3d(0, 0, 0);
+
+    will-change: transform;
+
+    overflow: hidden;
+
+    isolation: isolate;
 }
 
 
@@ -672,7 +670,6 @@ button {
    ========================================================= */
 
 .headerTitle {
-
     display: flex;
 
     flex-direction: column;
@@ -687,7 +684,6 @@ button {
 }
 
 .headerTitle > i {
-
     width: 52px;
     height: 52px;
 
@@ -711,7 +707,6 @@ button {
 }
 
 .headerText h1 {
-
     margin: 0;
 
     font-size: 22px;
@@ -722,7 +717,6 @@ button {
 }
 
 .headerText p {
-
     margin: 4px 0 0;
 
     font-size: 12px;
@@ -740,7 +734,6 @@ button {
    ========================================================= */
 
 .headerButtons {
-
     display: flex;
 
     align-items: center;
@@ -749,8 +742,9 @@ button {
 }
 
 .btn {
-
-    border: 1px solid transparent;
+    border:
+        1px solid
+        transparent;
 
     min-height: 38px;
 
@@ -781,7 +775,6 @@ button {
 }
 
 .add {
-
     background: #fff;
 
     color: var(--primary);
@@ -796,7 +789,6 @@ button {
 }
 
 .saveAll {
-
     background: var(--green);
 
     color: #fff;
@@ -811,7 +803,6 @@ button {
 }
 
 .out {
-
     background: #dc2626;
 
     color: #fff;
@@ -824,7 +815,6 @@ button {
 }
 
 .out:hover {
-
     background: #000;
 
     color: #fff;
@@ -835,38 +825,45 @@ button {
         0 6px 16px
         rgba(0, 0, 0, 0.25);
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 .out:active {
-
     background: #111;
 
     border-color: #111;
 
-    transform: translateY(0);
+    transform:
+        translateY(0);
 }
 
 
 /* =========================================================
    MAIN WRAPPER
+   ---------------------------------------------------------
+   HEADER HEIGHT IS RESERVED HERE
    ========================================================= */
 
 .wrap {
-
     width: 100%;
 
     max-width: 1500px;
 
     margin: 0 auto;
 
-    padding: 24px 28px;
+    padding:
+        98px 28px 24px;
 
     overflow: visible;
 
     height: auto;
 
     min-height: 0;
+
+    position: relative;
+
+    z-index: 1;
 }
 
 
@@ -875,7 +872,6 @@ button {
    ========================================================= */
 
 .top {
-
     width: 100%;
 
     display: grid;
@@ -889,7 +885,6 @@ button {
 }
 
 .card {
-
     position: relative;
 
     display: flex;
@@ -918,7 +913,6 @@ button {
 }
 
 .card::after {
-
     content: "";
 
     position: absolute;
@@ -938,14 +932,14 @@ button {
 }
 
 .card:hover {
+    transform:
+        translateY(-2px);
 
-    transform: translateY(-2px);
-
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        var(--shadow-lg);
 }
 
 .cardIcon {
-
     width: 52px;
     height: 52px;
 
@@ -971,17 +965,16 @@ button {
 }
 
 .membersIcon {
-
     background:
         var(--green-soft);
 
     color: var(--green);
 
-    border-color: #d3efdf;
+    border-color:
+        #d3efdf;
 }
 
 .card small {
-
     display: block;
 
     color: var(--muted);
@@ -996,7 +989,6 @@ button {
 }
 
 .card h2 {
-
     color: var(--primary);
 
     font-size: 25px;
@@ -1014,7 +1006,6 @@ button {
    ========================================================= */
 
 .searchBox {
-
     position: relative;
 
     width: 100%;
@@ -1023,13 +1014,13 @@ button {
 }
 
 .searchBox > i {
-
     position: absolute;
 
     left: 15px;
     top: 50%;
 
-    transform: translateY(-50%);
+    transform:
+        translateY(-50%);
 
     color: #98a2b3;
 
@@ -1039,12 +1030,12 @@ button {
 }
 
 .searchBox input {
-
     width: 100%;
 
     min-height: 46px;
 
-    padding: 12px 14px 12px 42px;
+    padding:
+        12px 14px 12px 42px;
 
     border:
         1px solid
@@ -1071,7 +1062,6 @@ button {
 }
 
 .searchBox input:focus {
-
     border-color:
         var(--primary-light);
 
@@ -1086,7 +1076,6 @@ button {
    ========================================================= */
 
 .yearBar {
-
     display: flex;
 
     align-items: center;
@@ -1115,7 +1104,6 @@ button {
 }
 
 .yearSelectBox {
-
     display: flex;
 
     align-items: center;
@@ -1124,7 +1112,6 @@ button {
 }
 
 .yearBar label {
-
     font-size: 9px;
 
     font-weight: 800;
@@ -1135,7 +1122,6 @@ button {
 }
 
 .yearBar select {
-
     min-height: 38px;
 
     border:
@@ -1144,7 +1130,8 @@ button {
 
     border-radius: 8px;
 
-    padding: 8px 30px 8px 11px;
+    padding:
+        8px 30px 8px 11px;
 
     background: #fff;
 
@@ -1163,7 +1150,6 @@ button {
 }
 
 .yearBar select:focus {
-
     border-color:
         var(--primary-light);
 
@@ -1173,7 +1159,6 @@ button {
 }
 
 #syncStatus {
-
     display: inline-flex;
 
     align-items: center;
@@ -1188,7 +1173,6 @@ button {
 }
 
 #syncStatus::before {
-
     content: "";
 
     width: 7px;
@@ -1237,7 +1221,6 @@ button {
    ========================================================= */
 
 .panel {
-
     width: 100%;
 
     background: #fff;
@@ -1262,7 +1245,6 @@ button {
 }
 
 .panelHeader {
-
     display: flex;
 
     align-items: center;
@@ -1273,7 +1255,6 @@ button {
 }
 
 .panelHeader h3 {
-
     color: var(--primary);
 
     font-size: 13px;
@@ -1282,14 +1263,12 @@ button {
 }
 
 .panelHeader h3 i {
-
     color: var(--accent);
 
     margin-right: 7px;
 }
 
 .panelClose {
-
     border: none;
 
     background: #f2f4f7;
@@ -1309,7 +1288,6 @@ button {
 }
 
 .panelClose:hover {
-
     background:
         var(--red-soft);
 
@@ -1318,14 +1296,12 @@ button {
 }
 
 .addMemberForm {
-
     display: flex;
 
     gap: 10px;
 }
 
 .addMemberForm input {
-
     flex: 1;
 
     min-height: 44px;
@@ -1346,7 +1322,6 @@ button {
 }
 
 .addMemberForm input:focus {
-
     background: #fff;
 
     border-color:
@@ -1358,7 +1333,6 @@ button {
 }
 
 .save {
-
     background:
         linear-gradient(
             135deg,
@@ -1388,8 +1362,8 @@ button {
 }
 
 .save:hover {
-
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 
     box-shadow:
         0 7px 16px
@@ -1406,7 +1380,6 @@ button {
    ========================================================= */
 
 .tableBox {
-
     width: 100%;
 
     background: #fff;
@@ -1427,6 +1400,8 @@ button {
     height: auto;
 
     min-height: 0;
+
+    isolation: isolate;
 }
 
 
@@ -1435,7 +1410,6 @@ button {
    ========================================================= */
 
 .tableHeader {
-
     display: flex;
 
     align-items: center;
@@ -1459,7 +1433,6 @@ button {
 }
 
 .tableHeader h3 {
-
     color: var(--primary);
 
     font-size: 14px;
@@ -1468,14 +1441,12 @@ button {
 }
 
 .tableHeader h3 i {
-
     color: var(--accent);
 
     margin-right: 7px;
 }
 
 .tableHeader p {
-
     color: var(--muted);
 
     font-size: 10px;
@@ -1484,7 +1455,6 @@ button {
 }
 
 #recordCount {
-
     display: inline-flex;
 
     align-items: center;
@@ -1513,19 +1483,17 @@ button {
 /* =========================================================
    TABLE SCROLL AREA
    ---------------------------------------------------------
-   IMPORTANT:
-   ONLY HORIZONTAL SCROLLING IS ALLOWED HERE.
-   VERTICAL PAGE SCROLLING BELONGS TO BODY.
+   HORIZONTAL ONLY
    ========================================================= */
 
 .scroll {
-
     width: 100%;
 
     position: relative;
 
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: auto !important;
+
+    overflow-y: hidden !important;
 
     -webkit-overflow-scrolling: touch;
 
@@ -1534,6 +1502,10 @@ button {
     scrollbar-color:
         #cbd5e1
         transparent;
+
+    max-width: 100%;
+
+    isolation: isolate;
 }
 
 .scroll::-webkit-scrollbar {
@@ -1545,7 +1517,6 @@ button {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-
     background: #cbd5e1;
 
     border-radius: 10px;
@@ -1561,7 +1532,6 @@ button {
    ========================================================= */
 
 table {
-
     width: 100%;
 
     min-width: 1050px;
@@ -1575,20 +1545,25 @@ table {
 /* =========================================================
    TABLE HEAD
    ---------------------------------------------------------
-   The table header remains part of the normal page flow.
-   This prevents a nested vertical scrolling problem.
+   NOT VERTICALLY STICKY
    ========================================================= */
 
 thead {
-    position: relative;
-    z-index: 20;
+    position: static !important;
+
+    z-index: auto !important;
+
+    display: table-header-group;
+}
+
+thead tr {
+    position: static !important;
 }
 
 th {
+    position: static !important;
 
-    position: relative;
-
-    z-index: 20;
+    z-index: 1;
 
     background:
         linear-gradient(
@@ -1620,16 +1595,19 @@ th {
 
 
 /* =========================================================
-   STICKY NAME HEADER
+   STICKY MEMBER NAME HEADER
+   ---------------------------------------------------------
+   HORIZONTAL ONLY
    ========================================================= */
 
 th:first-child {
+    position: sticky !important;
 
-    position: sticky;
+    top: auto !important;
 
-    left: 0;
+    left: 0 !important;
 
-    z-index: 100;
+    z-index: 100 !important;
 
     min-width: 190px;
 
@@ -1651,6 +1629,8 @@ th:first-child {
 
 th:last-child {
     min-width: 110px;
+
+    position: static !important;
 }
 
 
@@ -1659,7 +1639,6 @@ th:last-child {
    ========================================================= */
 
 td {
-
     padding: 9px 8px;
 
     border-bottom:
@@ -1678,6 +1657,13 @@ td {
         background 0.15s ease;
 }
 
+tbody tr {
+    position: static !important;
+
+    transition:
+        background 0.15s ease;
+}
+
 tbody tr:hover td {
     background: #fafbfc;
 }
@@ -1689,15 +1675,18 @@ tbody tr:last-child td {
 
 /* =========================================================
    STICKY MEMBER NAME COLUMN
+   ---------------------------------------------------------
+   HORIZONTAL ONLY
    ========================================================= */
 
 td:first-child {
+    position: sticky !important;
 
-    position: sticky;
+    top: auto !important;
 
-    left: 0;
+    left: 0 !important;
 
-    z-index: 30;
+    z-index: 30 !important;
 
     min-width: 190px;
 
@@ -1719,7 +1708,6 @@ tbody tr:hover td:first-child {
 }
 
 td:first-child b {
-
     display: block;
 
     color: var(--text-dark);
@@ -1735,7 +1723,6 @@ td:first-child b {
    ========================================================= */
 
 td input {
-
     width: 70px;
 
     min-height: 34px;
@@ -1771,7 +1758,6 @@ td input:hover {
 }
 
 td input:focus {
-
     border-color:
         var(--primary-light);
 
@@ -1783,7 +1769,6 @@ td input:focus {
 }
 
 td input.zero {
-
     color: var(--red);
 
     background:
@@ -1799,7 +1784,6 @@ td input.zero {
    ========================================================= */
 
 .memberTotal {
-
     color: var(--primary);
 
     font-size: 11px;
@@ -1815,7 +1799,6 @@ td input.zero {
    ========================================================= */
 
 .del {
-
     border:
         1px solid
         #ffd5d2;
@@ -1845,7 +1828,6 @@ td input.zero {
 }
 
 .del:hover {
-
     background:
         var(--red);
 
@@ -1865,7 +1847,6 @@ td input.zero {
    ========================================================= */
 
 .emptyState {
-
     display: none;
 
     flex-direction: column;
@@ -1880,7 +1861,6 @@ td input.zero {
 }
 
 .emptyState i {
-
     width: 58px;
     height: 58px;
 
@@ -1889,6 +1869,7 @@ td input.zero {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     background:
@@ -1902,14 +1883,12 @@ td input.zero {
 }
 
 .emptyState h3 {
-
     color: var(--primary);
 
     font-size: 15px;
 }
 
 .emptyState p {
-
     color: var(--muted);
 
     font-size: 11px;
@@ -1923,7 +1902,6 @@ td input.zero {
    ========================================================= */
 
 .modal {
-
     position: fixed;
 
     inset: 0;
@@ -1949,7 +1927,6 @@ td input.zero {
 }
 
 .modalBox {
-
     width: 100%;
 
     max-width: 400px;
@@ -1975,11 +1952,11 @@ td input.zero {
 }
 
 .modalIcon {
-
     width: 62px;
     height: 62px;
 
-    margin: 0 auto 16px;
+    margin:
+        0 auto 16px;
 
     border-radius: 18px;
 
@@ -1992,6 +1969,7 @@ td input.zero {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 22px;
@@ -2002,7 +1980,6 @@ td input.zero {
 }
 
 .saveIcon {
-
     background:
         var(--green-soft);
 
@@ -2014,7 +1991,6 @@ td input.zero {
 }
 
 .modalBox h3 {
-
     color: var(--primary);
 
     font-size: 19px;
@@ -2023,8 +1999,8 @@ td input.zero {
 }
 
 .modalBox p {
-
-    margin: 10px auto 23px;
+    margin:
+        10px auto 23px;
 
     max-width: 320px;
 
@@ -2036,14 +2012,12 @@ td input.zero {
 }
 
 .modalBox p strong {
-
     color: var(--primary);
 
     font-weight: 800;
 }
 
 .modalActions {
-
     display: flex;
 
     gap: 10px;
@@ -2052,7 +2026,6 @@ td input.zero {
 }
 
 .modalActions button {
-
     flex: 1;
 
     border: none;
@@ -2075,7 +2048,8 @@ td input.zero {
 }
 
 .modalActions button:hover {
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 .modalActions button i {
@@ -2083,7 +2057,6 @@ td input.zero {
 }
 
 .noBtn {
-
     background: #f2f4f7;
 
     color: var(--text);
@@ -2098,7 +2071,6 @@ td input.zero {
 }
 
 .yesBtn {
-
     background: var(--red);
 
     color: #fff;
@@ -2113,7 +2085,6 @@ td input.zero {
 }
 
 .saveConfirmBtn {
-
     background:
         var(--green);
 
@@ -2135,7 +2106,6 @@ td input.zero {
    ========================================================= */
 
 .loaderOverlay {
-
     position: fixed;
 
     inset: 0;
@@ -2159,7 +2129,6 @@ td input.zero {
 }
 
 .loaderBox {
-
     min-width: 150px;
 
     padding: 24px 20px;
@@ -2179,7 +2148,6 @@ td input.zero {
 }
 
 .spinner {
-
     width: 48px;
     height: 48px;
 
@@ -2198,11 +2166,11 @@ td input.zero {
     animation:
         spin 0.8s linear infinite;
 
-    margin: 0 auto 14px;
+    margin:
+        0 auto 14px;
 }
 
 .loaderBox p {
-
     color: var(--primary);
 
     font-size: 12px;
@@ -2216,7 +2184,6 @@ td input.zero {
    ========================================================= */
 
 .siteFooter {
-
     width: 100%;
 
     margin-top: 30px;
@@ -2236,7 +2203,6 @@ td input.zero {
 }
 
 .footerContent {
-
     width: 100%;
 
     max-width: 1500px;
@@ -2255,7 +2221,6 @@ td input.zero {
 }
 
 .footerBrand {
-
     display: flex;
 
     align-items: center;
@@ -2264,7 +2229,6 @@ td input.zero {
 }
 
 .footerLogo {
-
     width: 44px;
     height: 44px;
 
@@ -2280,6 +2244,7 @@ td input.zero {
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     font-size: 18px;
@@ -2289,14 +2254,12 @@ td input.zero {
 }
 
 .footerBrand h3 {
-
     font-size: 13px;
 
     font-weight: 800;
 }
 
 .footerBrand p {
-
     margin-top: 4px;
 
     color:
@@ -2306,7 +2269,6 @@ td input.zero {
 }
 
 .footerInfo {
-
     display: flex;
 
     align-items: center;
@@ -2317,7 +2279,6 @@ td input.zero {
 }
 
 .footerInfo span {
-
     display: flex;
 
     align-items: center;
@@ -2333,7 +2294,6 @@ td input.zero {
 }
 
 .footerInfo i {
-
     font-size: 11px;
 
     color:
@@ -2341,7 +2301,6 @@ td input.zero {
 }
 
 .footerBottom {
-
     width: 100%;
 
     max-width: 1500px;
@@ -2364,7 +2323,6 @@ td input.zero {
 }
 
 .footerBottom p {
-
     color:
         rgba(255, 255, 255, 0.45);
 
@@ -2374,7 +2332,6 @@ td input.zero {
 }
 
 .footerCredit strong {
-
     color:
         var(--accent-light);
 
@@ -2387,9 +2344,7 @@ td input.zero {
    ========================================================= */
 
 @keyframes loginAppear {
-
     from {
-
         opacity: 0;
 
         transform:
@@ -2398,7 +2353,6 @@ td input.zero {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -2408,9 +2362,7 @@ td input.zero {
 }
 
 @keyframes panelAppear {
-
     from {
-
         opacity: 0;
 
         transform:
@@ -2418,7 +2370,6 @@ td input.zero {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -2427,9 +2378,7 @@ td input.zero {
 }
 
 @keyframes popupIn {
-
     from {
-
         opacity: 0;
 
         transform:
@@ -2438,7 +2387,6 @@ td input.zero {
     }
 
     to {
-
         opacity: 1;
 
         transform:
@@ -2448,13 +2396,14 @@ td input.zero {
 }
 
 @keyframes spin {
-
     from {
-        transform: rotate(0deg);
+        transform:
+            rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg);
+        transform:
+            rotate(360deg);
     }
 }
 
@@ -2466,27 +2415,42 @@ td input.zero {
 @media (max-width: 900px) {
 
     .mainHeader {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+
+        width: 100% !important;
 
         padding: 12px 18px;
 
-        flex-wrap: wrap;
+        z-index: 99999 !important;
+
+        transform:
+            translate3d(0, 0, 0);
+
+        -webkit-transform:
+            translate3d(0, 0, 0);
     }
 
     .headerButtons {
-
         width: 100%;
 
         justify-content: flex-end;
     }
 
+    /*
+       Header is still fixed,
+       so reserve enough space.
+    */
     .wrap {
-
-        padding: 18px;
+        padding:
+            115px 18px 18px;
     }
 
     .footerContent,
     .footerBottom {
-
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -2501,7 +2465,6 @@ td input.zero {
 
     html,
     body {
-
         width: 100%;
 
         min-width: 320px;
@@ -2521,7 +2484,6 @@ td input.zero {
        ===================================================== */
 
     #loginPage {
-
         min-height: 100vh;
 
         padding: 14px;
@@ -2536,7 +2498,6 @@ td input.zero {
     }
 
     .loginBox {
-
         width: 100%;
 
         max-width: 430px;
@@ -2549,7 +2510,6 @@ td input.zero {
     }
 
     .loginLogo {
-
         width: 62px;
         height: 62px;
 
@@ -2565,7 +2525,6 @@ td input.zero {
     }
 
     .loginBox input {
-
         min-height: 46px;
 
         font-size: 16px;
@@ -2577,14 +2536,20 @@ td input.zero {
 
 
     /* =====================================================
-       DASHBOARD HEADER
+       MOBILE DASHBOARD HEADER
+       -----------------------------------------------------
+       CRITICAL:
+       REMAINS FIXED
        ===================================================== */
 
     .mainHeader {
+        position: fixed !important;
 
-        position: relative;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
 
-        width: 100%;
+        width: 100% !important;
 
         min-height: auto;
 
@@ -2595,17 +2560,27 @@ td input.zero {
         align-items: stretch;
 
         gap: 13px;
+
+        z-index: 99999 !important;
+
+        overflow: hidden;
+
+        transform:
+            translate3d(0, 0, 0);
+
+        -webkit-transform:
+            translate3d(0, 0, 0);
+
+        will-change: transform;
     }
 
     .headerTitle {
-
         justify-content: center;
 
         text-align: center;
     }
 
     .headerTitle > i {
-
         width: 42px;
         height: 42px;
 
@@ -2613,12 +2588,10 @@ td input.zero {
     }
 
     .headerText h1 {
-
         font-size: 15px;
     }
 
     .headerText p {
-
         font-size: 8px;
     }
 
@@ -2628,7 +2601,6 @@ td input.zero {
        ===================================================== */
 
     .headerButtons {
-
         width: 100%;
 
         display: grid;
@@ -2639,7 +2611,6 @@ td input.zero {
     }
 
     .headerButtons .btn {
-
         width: 100%;
 
         min-height: 44px;
@@ -2653,12 +2624,22 @@ td input.zero {
        ===================================================== */
 
     .wrap {
-
         width: 100%;
 
-        padding: 10px;
+        /*
+           Mobile header is taller because it contains
+           title + buttons.
+
+           This keeps content below it.
+        */
+        padding:
+            250px 10px 10px;
 
         overflow: visible;
+
+        position: relative;
+
+        z-index: 1;
     }
 
 
@@ -2667,14 +2648,12 @@ td input.zero {
        ===================================================== */
 
     .top {
-
         grid-template-columns: 1fr;
 
         gap: 10px;
     }
 
     .card {
-
         width: 100%;
 
         padding: 16px;
@@ -2683,7 +2662,6 @@ td input.zero {
     }
 
     .cardIcon {
-
         width: 46px;
         height: 46px;
 
@@ -2702,7 +2680,6 @@ td input.zero {
        ===================================================== */
 
     .searchBox input {
-
         min-height: 45px;
 
         font-size: 16px;
@@ -2714,7 +2691,6 @@ td input.zero {
        ===================================================== */
 
     .yearBar {
-
         display: grid;
 
         grid-template-columns: 1fr;
@@ -2727,12 +2703,10 @@ td input.zero {
     }
 
     .yearSelectBox {
-
         justify-content: space-between;
     }
 
     #yearSelect {
-
         min-height: 43px;
 
         font-size: 16px;
@@ -2748,20 +2722,17 @@ td input.zero {
        ===================================================== */
 
     .panel {
-
         padding: 13px;
 
         border-radius: 14px;
     }
 
     .addMemberForm {
-
         flex-direction: column;
     }
 
     .addMemberForm input,
     .addMemberForm button {
-
         width: 100%;
 
         min-height: 44px;
@@ -2773,7 +2744,6 @@ td input.zero {
        ===================================================== */
 
     .tableHeader {
-
         padding: 15px;
 
         align-items: flex-start;
@@ -2797,26 +2767,42 @@ td input.zero {
        ===================================================== */
 
     .tableBox {
-
         width: 100%;
 
         overflow: visible;
+
+        position: relative;
+
+        isolation: isolate;
     }
 
     .scroll {
-
         width: 100%;
 
-        overflow-x: auto;
+        overflow-x: auto !important;
 
-        overflow-y: hidden;
+        overflow-y: hidden !important;
 
         -webkit-overflow-scrolling: touch;
+
+        position: relative;
     }
 
     .scroll table {
-
         min-width: 1050px;
+    }
+
+
+    /* =====================================================
+       TABLE HEADER — NO VERTICAL STICKINESS
+       ===================================================== */
+
+    .scroll thead,
+    .scroll thead tr,
+    .scroll th {
+        position: static !important;
+
+        top: auto !important;
     }
 
 
@@ -2826,28 +2812,29 @@ td input.zero {
 
     .scroll th:first-child,
     .scroll td:first-child {
-
         min-width: 170px;
 
         width: 170px;
     }
 
     .scroll th:first-child {
+        position: sticky !important;
 
-        position: sticky;
+        top: auto !important;
 
-        left: 0;
+        left: 0 !important;
 
-        z-index: 100;
+        z-index: 100 !important;
     }
 
     .scroll td:first-child {
+        position: sticky !important;
 
-        position: sticky;
+        top: auto !important;
 
-        left: 0;
+        left: 0 !important;
 
-        z-index: 30;
+        z-index: 30 !important;
 
         background: #fff;
     }
@@ -2858,7 +2845,6 @@ td input.zero {
        ===================================================== */
 
     .scroll td input {
-
         min-width: 72px;
 
         min-height: 40px;
@@ -2867,7 +2853,6 @@ td input.zero {
     }
 
     .del {
-
         min-height: 40px;
 
         padding: 8px 10px;
@@ -2879,12 +2864,10 @@ td input.zero {
        ===================================================== */
 
     .modal {
-
         padding: 12px;
     }
 
     .modalBox {
-
         max-width: 390px;
 
         padding: 26px 18px;
@@ -2893,10 +2876,10 @@ td input.zero {
     }
 
     .modalActions {
-
         display: grid;
 
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+            1fr 1fr;
 
         gap: 8px;
     }
@@ -2911,12 +2894,10 @@ td input.zero {
        ===================================================== */
 
     .siteFooter {
-
         margin-top: 25px;
     }
 
     .footerContent {
-
         flex-direction: column;
 
         align-items: center;
@@ -2927,28 +2908,24 @@ td input.zero {
     }
 
     .footerBrand {
-
         flex-direction: column;
 
         gap: 8px;
     }
 
     .footerBrand p {
-
         max-width: 280px;
 
         line-height: 1.5;
     }
 
     .footerInfo {
-
         justify-content: center;
 
         gap: 11px;
     }
 
     .footerBottom {
-
         flex-direction: column;
 
         text-align: center;
@@ -2967,13 +2944,11 @@ td input.zero {
 @media (max-width: 420px) {
 
     #loginPage {
-
         padding:
             25px 10px 30px;
     }
 
     .loginBox {
-
         padding:
             27px 15px;
     }
@@ -2987,7 +2962,8 @@ td input.zero {
     }
 
     .wrap {
-        padding: 8px;
+        padding:
+            250px 8px 8px;
     }
 
     .card {
@@ -3000,7 +2976,6 @@ td input.zero {
 
     .scroll th:first-child,
     .scroll td:first-child {
-
         min-width: 155px;
 
         width: 155px;
@@ -3019,7 +2994,6 @@ td input.zero {
 @media (max-height: 650px) and (max-width: 700px) {
 
     #loginPage {
-
         align-items: flex-start;
 
         padding-top: 20px;
@@ -3028,7 +3002,6 @@ td input.zero {
     }
 
     .loginBox {
-
         margin-top: 0;
     }
 }
@@ -3041,7 +3014,6 @@ td input.zero {
 @media (max-height: 500px) and (max-width: 900px) {
 
     #loginPage {
-
         align-items: flex-start;
 
         padding-top: 15px;
@@ -3050,7 +3022,6 @@ td input.zero {
     }
 
     .loginBox {
-
         padding-top: 24px;
 
         padding-bottom: 24px;
@@ -3071,7 +3042,6 @@ td input.zero {
     *,
     *::before,
     *::after {
-
         animation-duration:
             0.01ms !important;
 
@@ -3081,4 +3051,100 @@ td input.zero {
         transition-duration:
             0.01ms !important;
     }
+}
+
+
+/* =========================================================
+   FINAL HEADER SAFETY OVERRIDE
+   ---------------------------------------------------------
+   KEEP THIS AT THE VERY END.
+   It prevents any later CSS rule from accidentally
+   changing the dashboard header back to sticky/relative.
+   ========================================================= */
+
+.mainHeader {
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+
+    width: 100% !important;
+
+    z-index: 99999 !important;
+
+    transform:
+        translate3d(0, 0, 0) !important;
+
+    -webkit-transform:
+        translate3d(0, 0, 0) !important;
+}
+
+
+/* =========================================================
+   FINAL TABLE SAFETY OVERRIDE
+   ---------------------------------------------------------
+   The table is NEVER allowed to vertically scroll.
+   ========================================================= */
+
+.scroll {
+    overflow-x: auto !important;
+
+    overflow-y: hidden !important;
+
+    max-width: 100%;
+
+    position: relative !important;
+}
+
+.scroll thead,
+.scroll thead tr,
+.scroll th {
+    position: static !important;
+
+    top: auto !important;
+}
+
+
+/* =========================================================
+   ONLY MEMBER NAME COLUMN CAN STICK HORIZONTALLY
+   ========================================================= */
+
+.scroll th:first-child {
+    position: sticky !important;
+
+    top: auto !important;
+
+    left: 0 !important;
+
+    z-index: 100 !important;
+}
+
+.scroll td:first-child {
+    position: sticky !important;
+
+    top: auto !important;
+
+    left: 0 !important;
+
+    z-index: 30 !important;
+}
+
+
+/* =========================================================
+   NEVER LET TABLE CONTENT COVER MAIN HEADER
+   ========================================================= */
+
+.tableBox,
+.scroll,
+.scroll table {
+    isolation: isolate;
+}
+
+.wrap {
+    z-index: 1;
+}
+
+.mainHeader {
+    z-index: 99999 !important;
 }
