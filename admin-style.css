@@ -1,34 +1,39 @@
 /* =========================================================
-   CAKE STAFFS WELFARE
+   CAKE STAFF WELFARE
    PREMIUM ADMIN DASHBOARD
-   VISUAL STYLES ONLY
-
+   FINAL RESPONSIVE VERSION
    ---------------------------------------------------------
    IMPORTANT:
    - No IDs changed
    - No classes changed
    - No JavaScript functionality changed
    - No API/backend changes
-========================================================= */
+   - Full page vertical scrolling enabled
+   - Table scrolls horizontally only
+   - Mobile responsive
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     font-family:
         "Inter",
         "Segoe UI",
         Arial,
         sans-serif;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 :root {
-
-    /* =====================================================
-       PREMIUM COLOUR SYSTEM
-    ===================================================== */
 
     --primary: #16213e;
     --primary-dark: #0b132b;
@@ -76,16 +81,26 @@
 
 
 /* =========================================================
-   BASE
-========================================================= */
+   HTML / BODY
+   ========================================================= */
 
 html {
+    width: 100%;
+    min-height: 100%;
+
     -webkit-text-size-adjust: 100%;
+
     scroll-behavior: smooth;
+
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 body {
+    width: 100%;
+    min-width: 320px;
     min-height: 100vh;
+
     background:
         radial-gradient(
             circle at top right,
@@ -93,8 +108,15 @@ body {
             transparent 28%
         ),
         var(--bg);
+
     color: var(--text);
+
+    line-height: 1.5;
+
     overflow-x: hidden;
+    overflow-y: auto;
+
+    -webkit-overflow-scrolling: touch;
 }
 
 button,
@@ -115,13 +137,17 @@ button {
 
 /* =========================================================
    LOGIN PAGE
-========================================================= */
+   ========================================================= */
 
 #loginPage {
+
+    width: 100%;
     min-height: 100vh;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     padding: 24px;
 
     background:
@@ -143,62 +169,89 @@ button {
         );
 
     position: relative;
+
     overflow: hidden;
 }
 
 #loginPage::before,
 #loginPage::after {
+
     content: "";
+
     position: absolute;
+
     border-radius: 50%;
+
     pointer-events: none;
 }
 
 #loginPage::before {
+
     width: 280px;
     height: 280px;
+
     top: -120px;
     right: -90px;
-    border: 1px solid rgba(229, 198, 90, 0.15);
+
+    border:
+        1px solid
+        rgba(229, 198, 90, 0.15);
 }
 
 #loginPage::after {
+
     width: 220px;
     height: 220px;
+
     bottom: -100px;
     left: -70px;
-    border: 1px solid rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 }
 
 
 /* =========================================================
    LOGIN BOX
-========================================================= */
+   ========================================================= */
 
 .loginBox {
+
     position: relative;
     z-index: 2;
+
     width: 100%;
     max-width: 410px;
+
     padding: 38px 32px;
 
-    background: rgba(255,255,255,0.98);
+    background: rgba(255, 255, 255, 0.98);
+
     border-radius: 22px;
 
     box-shadow:
-        0 30px 80px rgba(0,0,0,0.25);
+        0 30px 80px rgba(0, 0, 0, 0.25);
 
-    border: 1px solid rgba(255,255,255,0.7);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.7);
+
     overflow: hidden;
 
-    animation: loginAppear 0.45s ease;
+    animation:
+        loginAppear 0.45s ease;
 }
 
 .loginBox::before {
+
     content: "";
+
     position: absolute;
+
     top: 0;
     left: 0;
+
     width: 100%;
     height: 4px;
 
@@ -214,11 +267,13 @@ button {
 
 /* =========================================================
    LOGIN LOGO
-========================================================= */
+   ========================================================= */
 
 .loginLogo {
+
     width: 68px;
     height: 68px;
+
     margin: 0 auto 18px;
 
     border-radius: 18px;
@@ -235,73 +290,104 @@ button {
         );
 
     color: var(--accent-light);
+
     font-size: 27px;
 
     box-shadow:
-        0 10px 25px rgba(22,33,62,0.20);
+        0 10px 25px
+        rgba(22, 33, 62, 0.20);
 
-    border: 1px solid rgba(201,162,39,0.20);
+    border:
+        1px solid
+        rgba(201, 162, 39, 0.20);
 }
 
 
 /* =========================================================
    LOGIN HEADINGS
-========================================================= */
+   ========================================================= */
 
 .loginBox h1 {
+
     color: var(--primary);
+
     font-size: 19px;
     font-weight: 800;
+
     text-align: center;
+
     letter-spacing: -0.3px;
 }
 
 .loginBox h2 {
+
     color: var(--accent);
+
     font-size: 13px;
     font-weight: 800;
+
     text-align: center;
+
     margin-top: 6px;
+
     letter-spacing: 1.5px;
 }
 
 .loginSubtitle {
+
     color: var(--muted);
+
     font-size: 12px;
+
     line-height: 1.6;
+
     text-align: center;
+
     margin: 9px 0 26px;
 }
 
 
 /* =========================================================
    LOGIN FORM
-========================================================= */
+   ========================================================= */
 
 .loginBox form > label:not(.rememberLabel) {
+
     display: block;
+
     font-size: 10px;
     font-weight: 800;
+
     color: var(--text);
+
     margin-top: 16px;
+
     letter-spacing: 0.7px;
 }
 
 
 /* =========================================================
    INPUTS
-========================================================= */
+   ========================================================= */
 
 .loginBox input {
+
     width: 100%;
+
     padding: 13px 14px;
+
     margin-top: 8px;
 
     background: #fbfcfe;
-    border: 1px solid var(--border);
+
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 10px;
 
     outline: none;
+
     color: var(--text);
 
     transition:
@@ -315,20 +401,26 @@ button {
 }
 
 .loginBox input:focus {
+
     background: #fff;
-    border-color: var(--primary-light);
+
+    border-color:
+        var(--primary-light);
 
     box-shadow:
-        0 0 0 4px rgba(36,59,103,0.08);
+        0 0 0 4px
+        rgba(36, 59, 103, 0.08);
 }
 
 
 /* =========================================================
    PASSWORD
-========================================================= */
+   ========================================================= */
 
 .passwordBox {
+
     position: relative;
+
     width: 100%;
 }
 
@@ -337,16 +429,21 @@ button {
 }
 
 .eye {
+
     position: absolute;
+
     right: 6px;
     top: 50%;
+
     transform: translateY(-30%);
 
     width: 40px;
     height: 40px;
 
     border: none;
+
     background: transparent;
+
     color: #98a2b3;
 
     cursor: pointer;
@@ -363,23 +460,29 @@ button {
 }
 
 .eye:hover {
+
     color: var(--primary);
-    background: var(--surface-soft);
+
+    background:
+        var(--surface-soft);
 }
 
 
 /* =========================================================
    REMEMBER ME
-========================================================= */
+   ========================================================= */
 
 .rememberLabel {
+
     display: flex;
     align-items: center;
+
     gap: 8px;
 
     margin-top: 15px;
 
     color: var(--muted);
+
     font-size: 11px;
     font-weight: 600;
 
@@ -387,6 +490,7 @@ button {
 }
 
 .rememberLabel input {
+
     width: 16px;
     height: 16px;
 
@@ -394,21 +498,27 @@ button {
     padding: 0;
 
     accent-color: var(--primary);
+
     cursor: pointer;
 }
 
 
 /* =========================================================
    LOGIN BUTTON
-========================================================= */
+   ========================================================= */
 
 .loginBtn {
+
     width: 100%;
+
     margin-top: 22px;
+
     min-height: 48px;
+
     padding: 13px 16px;
 
     border: none;
+
     border-radius: 10px;
 
     background:
@@ -426,7 +536,8 @@ button {
     cursor: pointer;
 
     box-shadow:
-        0 8px 18px rgba(22,33,62,0.18);
+        0 8px 18px
+        rgba(22, 33, 62, 0.18);
 
     transition:
         transform 0.2s ease,
@@ -435,10 +546,12 @@ button {
 }
 
 .loginBtn:hover {
+
     transform: translateY(-1px);
 
     box-shadow:
-        0 12px 24px rgba(22,33,62,0.23);
+        0 12px 24px
+        rgba(22, 33, 62, 0.23);
 }
 
 .loginBtn:active {
@@ -446,8 +559,11 @@ button {
 }
 
 .loginBtn:disabled {
+
     opacity: 0.65;
+
     cursor: not-allowed;
+
     transform: none;
 }
 
@@ -457,51 +573,77 @@ button {
 
 
 /* =========================================================
-   ERROR
-========================================================= */
+   ERROR MESSAGE
+   ========================================================= */
 
 .errorMessage {
+
     display: none;
 
     color: var(--red);
+
     font-size: 11px;
+
     text-align: center;
 
     margin-top: 12px;
+
     line-height: 1.5;
 
-    background: var(--red-soft);
-    border: 1px solid #ffd5d2;
+    background:
+        var(--red-soft);
+
+    border:
+        1px solid
+        #ffd5d2;
 
     border-radius: 8px;
+
     padding: 9px 10px;
 }
 
 
 /* =========================================================
    DASHBOARD
-========================================================= */
+   ========================================================= */
 
 #dashPage {
+
     display: none;
+
+    width: 100%;
     min-height: 100vh;
+
+    overflow: visible;
+
+    height: auto;
+
+    position: relative;
 }
 
 
 /* =========================================================
    MAIN HEADER
-========================================================= */
+   ========================================================= */
 
 .mainHeader {
+
     position: sticky;
+
     top: 0;
+
     z-index: 500;
 
+    width: 100%;
+
     min-height: 74px;
+
     padding: 12px 28px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
@@ -515,86 +657,113 @@ button {
             var(--primary)
         );
 
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 
     box-shadow:
-        0 4px 20px rgba(0,0,0,0.12);
+        0 4px 20px
+        rgba(0, 0, 0, 0.12);
 }
 
 
 /* =========================================================
    HEADER BRAND
-========================================================= */
+   ========================================================= */
 
 .headerTitle {
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
+
     gap: 8px;
 }
 
 .headerTitle > i {
+
     width: 52px;
     height: 52px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 14px;
 
-    background: rgba(20,184,166,0.15);
+    background:
+        rgba(20, 184, 166, 0.15);
+
     color: #14b8a6;
 
     font-size: 25px;
 
     box-shadow:
-        0 6px 18px rgba(0,0,0,0.12);
+        0 6px 18px
+        rgba(0, 0, 0, 0.12);
 }
 
 .headerText h1 {
+
     margin: 0;
+
     font-size: 22px;
+
     font-weight: 800;
+
     letter-spacing: 0.5px;
 }
 
 .headerText p {
+
     margin: 4px 0 0;
 
     font-size: 12px;
+
     font-weight: 600;
 
     opacity: 0.7;
+
     letter-spacing: 1.5px;
 }
 
 
 /* =========================================================
    HEADER BUTTONS
-========================================================= */
+   ========================================================= */
 
 .headerButtons {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
 }
 
 .btn {
+
     border: 1px solid transparent;
 
     min-height: 38px;
+
     padding: 9px 13px;
 
     border-radius: 9px;
 
     font-weight: 800;
+
     font-size: 10px;
 
     cursor: pointer;
+
     white-space: nowrap;
 
     transition:
@@ -612,11 +781,14 @@ button {
 }
 
 .add {
+
     background: #fff;
+
     color: var(--primary);
 
     box-shadow:
-        0 3px 10px rgba(0,0,0,0.10);
+        0 3px 10px
+        rgba(0, 0, 0, 0.10);
 }
 
 .add:hover {
@@ -624,11 +796,14 @@ button {
 }
 
 .saveAll {
+
     background: var(--green);
+
     color: #fff;
 
     box-shadow:
-        0 4px 12px rgba(22,132,91,0.22);
+        0 4px 12px
+        rgba(22, 132, 91, 0.22);
 }
 
 .saveAll:hover {
@@ -636,72 +811,101 @@ button {
 }
 
 .out {
+
     background: #dc2626;
-    color: #ffffff;
+
+    color: #fff;
 
     border-color: #dc2626;
 
     box-shadow:
-        0 4px 12px rgba(220,38,38,0.22);
+        0 4px 12px
+        rgba(220, 38, 38, 0.22);
 }
 
 .out:hover {
-    background: #000000;
-    color: #ffffff;
-    border-color: #000000;
+
+    background: #000;
+
+    color: #fff;
+
+    border-color: #000;
 
     box-shadow:
-        0 6px 16px rgba(0,0,0,0.25);
+        0 6px 16px
+        rgba(0, 0, 0, 0.25);
 
     transform: translateY(-1px);
 }
 
 .out:active {
-    background: #111111;
-    border-color: #111111;
+
+    background: #111;
+
+    border-color: #111;
+
     transform: translateY(0);
 }
 
 
 /* =========================================================
    MAIN WRAPPER
-========================================================= */
+   ========================================================= */
 
 .wrap {
+
     width: 100%;
+
     max-width: 1500px;
 
-    margin: auto;
+    margin: 0 auto;
+
     padding: 24px 28px;
+
+    overflow: visible;
+
+    height: auto;
+
+    min-height: 0;
 }
 
 
 /* =========================================================
    SUMMARY CARDS
-========================================================= */
+   ========================================================= */
 
 .top {
+
+    width: 100%;
+
     display: grid;
 
     grid-template-columns:
         repeat(2, minmax(0, 1fr));
 
     gap: 16px;
+
     margin-bottom: 18px;
 }
 
 .card {
+
     position: relative;
 
     display: flex;
+
     align-items: center;
 
     gap: 15px;
+
     padding: 20px;
 
     background: var(--surface);
 
-    border: 1px solid var(--border-light);
+    border:
+        1px solid
+        var(--border-light);
+
     border-radius: var(--radius-lg);
 
     box-shadow: var(--shadow);
@@ -714,9 +918,11 @@ button {
 }
 
 .card::after {
+
     content: "";
 
     position: absolute;
+
     right: -35px;
     top: -35px;
 
@@ -726,55 +932,71 @@ button {
     border-radius: 50%;
 
     background:
-        rgba(201,162,39,0.05);
+        rgba(201, 162, 39, 0.05);
 
     pointer-events: none;
 }
 
 .card:hover {
+
     transform: translateY(-2px);
+
     box-shadow: var(--shadow-lg);
 }
 
 .cardIcon {
+
     width: 52px;
     height: 52px;
 
     border-radius: 14px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     flex-shrink: 0;
 
-    background: var(--blue-soft);
+    background:
+        var(--blue-soft);
+
     color: var(--blue);
 
     font-size: 20px;
 
-    border: 1px solid #dbe7ff;
+    border:
+        1px solid
+        #dbe7ff;
 }
 
 .membersIcon {
-    background: var(--green-soft);
+
+    background:
+        var(--green-soft);
+
     color: var(--green);
+
     border-color: #d3efdf;
 }
 
 .card small {
+
     display: block;
 
     color: var(--muted);
 
     font-size: 9px;
+
     font-weight: 800;
 
     text-transform: uppercase;
+
     letter-spacing: 0.8px;
 }
 
 .card h2 {
+
     color: var(--primary);
 
     font-size: 25px;
@@ -782,21 +1004,26 @@ button {
     margin-top: 5px;
 
     font-weight: 800;
+
     letter-spacing: -0.5px;
 }
 
 
 /* =========================================================
    SEARCH
-========================================================= */
+   ========================================================= */
 
 .searchBox {
+
     position: relative;
+
     width: 100%;
+
     margin-bottom: 14px;
 }
 
 .searchBox > i {
+
     position: absolute;
 
     left: 15px;
@@ -807,25 +1034,32 @@ button {
     color: #98a2b3;
 
     pointer-events: none;
+
     font-size: 13px;
 }
 
 .searchBox input {
+
     width: 100%;
 
     min-height: 46px;
 
     padding: 12px 14px 12px 42px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 10px;
 
     outline: none;
 
     background: #fff;
+
     color: var(--text);
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 
     transition:
         border-color 0.2s ease,
@@ -837,46 +1071,62 @@ button {
 }
 
 .searchBox input:focus {
-    border-color: var(--primary-light);
+
+    border-color:
+        var(--primary-light);
 
     box-shadow:
-        0 0 0 4px rgba(36,59,103,0.07);
+        0 0 0 4px
+        rgba(36, 59, 103, 0.07);
 }
 
 
 /* =========================================================
    YEAR BAR
-========================================================= */
+   ========================================================= */
 
 .yearBar {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 12px;
 
     margin: 14px 0;
+
     padding: 12px 14px;
 
-    background: rgba(255,255,255,0.75);
+    background:
+        rgba(255, 255, 255, 0.75);
 
-    border: 1px solid var(--border-light);
+    border:
+        1px solid
+        var(--border-light);
+
     border-radius: 11px;
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 
     flex-wrap: wrap;
 }
 
 .yearSelectBox {
+
     display: flex;
+
     align-items: center;
+
     gap: 10px;
 }
 
 .yearBar label {
+
     font-size: 9px;
+
     font-weight: 800;
 
     color: var(--muted);
@@ -885,44 +1135,60 @@ button {
 }
 
 .yearBar select {
+
     min-height: 38px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 8px;
 
     padding: 8px 30px 8px 11px;
 
     background: #fff;
+
     color: var(--primary);
 
     font-weight: 800;
+
     font-size: 12px;
 
     outline: none;
+
     cursor: pointer;
 
-    box-shadow: var(--shadow-sm);
+    box-shadow:
+        var(--shadow-sm);
 }
 
 .yearBar select:focus {
-    border-color: var(--primary-light);
+
+    border-color:
+        var(--primary-light);
 
     box-shadow:
-        0 0 0 3px rgba(36,59,103,0.07);
+        0 0 0 3px
+        rgba(36, 59, 103, 0.07);
 }
 
 #syncStatus {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 6px;
 
     font-size: 10px;
+
     font-weight: 800;
 
     color: var(--muted);
 }
 
 #syncStatus::before {
+
     content: "";
 
     width: 7px;
@@ -968,47 +1234,66 @@ button {
 
 /* =========================================================
    ADD MEMBER PANEL
-========================================================= */
+   ========================================================= */
 
 .panel {
+
+    width: 100%;
+
     background: #fff;
 
-    border: 1px solid var(--border-light);
+    border:
+        1px solid
+        var(--border-light);
+
     border-radius: var(--radius-lg);
 
     padding: 18px;
+
     margin-bottom: 18px;
 
     display: none;
 
-    box-shadow: var(--shadow);
+    box-shadow:
+        var(--shadow);
 
-    animation: panelAppear 0.2s ease;
+    animation:
+        panelAppear 0.2s ease;
 }
 
 .panelHeader {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     margin-bottom: 14px;
 }
 
 .panelHeader h3 {
+
     color: var(--primary);
+
     font-size: 13px;
+
     font-weight: 800;
 }
 
 .panelHeader h3 i {
+
     color: var(--accent);
+
     margin-right: 7px;
 }
 
 .panelClose {
+
     border: none;
 
     background: #f2f4f7;
+
     color: var(--muted);
 
     width: 34px;
@@ -1024,41 +1309,56 @@ button {
 }
 
 .panelClose:hover {
-    background: var(--red-soft);
-    color: var(--red);
+
+    background:
+        var(--red-soft);
+
+    color:
+        var(--red);
 }
 
 .addMemberForm {
+
     display: flex;
+
     gap: 10px;
 }
 
 .addMemberForm input {
+
     flex: 1;
 
     min-height: 44px;
 
     padding: 11px 13px;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
+
     border-radius: 9px;
 
     outline: none;
 
     background: #fbfcfe;
+
     color: var(--text);
 }
 
 .addMemberForm input:focus {
+
     background: #fff;
 
-    border-color: var(--primary-light);
+    border-color:
+        var(--primary-light);
 
     box-shadow:
-        0 0 0 4px rgba(36,59,103,0.07);
+        0 0 0 4px
+        rgba(36, 59, 103, 0.07);
 }
 
 .save {
+
     background:
         linear-gradient(
             135deg,
@@ -1075,9 +1375,11 @@ button {
     border-radius: 9px;
 
     font-weight: 800;
+
     font-size: 11px;
 
     cursor: pointer;
+
     white-space: nowrap;
 
     transition:
@@ -1086,10 +1388,12 @@ button {
 }
 
 .save:hover {
+
     transform: translateY(-1px);
 
     box-shadow:
-        0 7px 16px rgba(22,33,62,0.18);
+        0 7px 16px
+        rgba(22, 33, 62, 0.18);
 }
 
 .save i {
@@ -1099,37 +1403,52 @@ button {
 
 /* =========================================================
    TABLE BOX
-========================================================= */
+   ========================================================= */
 
 .tableBox {
+
+    width: 100%;
+
     background: #fff;
 
-    border: 1px solid var(--border-light);
+    border:
+        1px solid
+        var(--border-light);
+
     border-radius: var(--radius-lg);
+
+    box-shadow:
+        var(--shadow);
+
+    position: relative;
 
     overflow: visible;
 
-    box-shadow: var(--shadow);
+    height: auto;
 
-    position: relative;
+    min-height: 0;
 }
 
 
 /* =========================================================
    TABLE HEADER
-========================================================= */
+   ========================================================= */
 
 .tableHeader {
+
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 15px;
 
     padding: 19px 20px;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid
+        var(--border-light);
 
     background:
         linear-gradient(
@@ -1140,37 +1459,51 @@ button {
 }
 
 .tableHeader h3 {
+
     color: var(--primary);
+
     font-size: 14px;
+
     font-weight: 800;
 }
 
 .tableHeader h3 i {
+
     color: var(--accent);
+
     margin-right: 7px;
 }
 
 .tableHeader p {
+
     color: var(--muted);
+
     font-size: 10px;
+
     margin-top: 5px;
 }
 
 #recordCount {
+
     display: inline-flex;
+
     align-items: center;
 
     padding: 6px 10px;
 
     border-radius: 20px;
 
-    background: var(--surface-soft);
+    background:
+        var(--surface-soft);
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     color: var(--muted);
 
     font-size: 10px;
+
     font-weight: 800;
 
     white-space: nowrap;
@@ -1178,21 +1511,29 @@ button {
 
 
 /* =========================================================
-   TABLE HORIZONTAL SCROLL
-========================================================= */
+   TABLE SCROLL AREA
+   ---------------------------------------------------------
+   IMPORTANT:
+   ONLY HORIZONTAL SCROLLING IS ALLOWED HERE.
+   VERTICAL PAGE SCROLLING BELONGS TO BODY.
+   ========================================================= */
 
 .scroll {
+
     width: 100%;
 
+    position: relative;
+
     overflow-x: auto;
-    overflow-y: visible;
+    overflow-y: hidden;
 
     -webkit-overflow-scrolling: touch;
 
     scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 transparent;
 
-    position: relative;
+    scrollbar-color:
+        #cbd5e1
+        transparent;
 }
 
 .scroll::-webkit-scrollbar {
@@ -1204,7 +1545,9 @@ button {
 }
 
 .scroll::-webkit-scrollbar-thumb {
+
     background: #cbd5e1;
+
     border-radius: 10px;
 }
 
@@ -1215,31 +1558,35 @@ button {
 
 /* =========================================================
    TABLE
-========================================================= */
+   ========================================================= */
 
 table {
+
     width: 100%;
+
     min-width: 1050px;
 
     border-collapse: separate;
+
     border-spacing: 0;
 }
 
 
 /* =========================================================
-   STICKY TABLE HEADERS
-========================================================= */
+   TABLE HEAD
+   ---------------------------------------------------------
+   The table header remains part of the normal page flow.
+   This prevents a nested vertical scrolling problem.
+   ========================================================= */
 
 thead {
-    position: sticky;
-    top: 0;
-
-    z-index: 25;
+    position: relative;
+    z-index: 20;
 }
 
 th {
-    position: sticky;
-    top: 0;
+
+    position: relative;
 
     z-index: 20;
 
@@ -1255,6 +1602,7 @@ th {
     padding: 13px 9px;
 
     font-size: 9px;
+
     font-weight: 800;
 
     text-align: center;
@@ -1263,26 +1611,28 @@ th {
 
     letter-spacing: 0.5px;
 
-    border-bottom: 2px solid var(--accent);
+    border-bottom:
+        2px solid
+        var(--accent);
 
-    /* Prevent transparency while sticky */
     background-clip: padding-box;
 }
 
 
 /* =========================================================
    STICKY NAME HEADER
-========================================================= */
+   ========================================================= */
 
 th:first-child {
+
     position: sticky;
 
-    top: 0;
     left: 0;
 
-    z-index: 50;
+    z-index: 100;
 
     min-width: 190px;
+
     width: 190px;
 
     text-align: left;
@@ -1295,7 +1645,8 @@ th:first-child {
         );
 
     box-shadow:
-        4px 0 10px rgba(16,24,40,0.12);
+        4px 0 10px
+        rgba(16, 24, 40, 0.12);
 }
 
 th:last-child {
@@ -1305,12 +1656,15 @@ th:last-child {
 
 /* =========================================================
    TABLE CELLS
-========================================================= */
+   ========================================================= */
 
 td {
+
     padding: 9px 8px;
 
-    border-bottom: 1px solid var(--border-light);
+    border-bottom:
+        1px solid
+        var(--border-light);
 
     font-size: 11px;
 
@@ -1335,16 +1689,18 @@ tbody tr:last-child td {
 
 /* =========================================================
    STICKY MEMBER NAME COLUMN
-========================================================= */
+   ========================================================= */
 
 td:first-child {
+
     position: sticky;
 
     left: 0;
 
-    z-index: 15;
+    z-index: 30;
 
     min-width: 190px;
+
     width: 190px;
 
     background: #fff;
@@ -1352,7 +1708,8 @@ td:first-child {
     text-align: left;
 
     box-shadow:
-        4px 0 10px rgba(16,24,40,0.06);
+        4px 0 10px
+        rgba(16, 24, 40, 0.06);
 
     background-clip: padding-box;
 }
@@ -1362,64 +1719,32 @@ tbody tr:hover td:first-child {
 }
 
 td:first-child b {
+
     display: block;
 
     color: var(--text-dark);
 
     font-size: 11px;
+
     font-weight: 800;
 }
 
 
 /* =========================================================
-   HEADER / NAME COLUMN LAYERING
-========================================================= */
-
-thead th {
-    background:
-        linear-gradient(
-            135deg,
-            var(--primary-dark),
-            var(--primary)
-        );
-}
-
-thead th:first-child {
-    position: sticky;
-
-    top: 0;
-    left: 0;
-
-    z-index: 100;
-}
-
-tbody td:first-child {
-    position: sticky;
-
-    left: 0;
-
-    z-index: 30;
-
-    background: #fff;
-}
-
-tbody tr:hover td:first-child {
-    background: #fafbfc;
-}
-
-
-/* =========================================================
    CONTRIBUTION INPUTS
-========================================================= */
+   ========================================================= */
 
 td input {
+
     width: 70px;
 
     min-height: 34px;
 
     padding: 7px 6px;
 
-    border: 1px solid #d0d5dd;
+    border:
+        1px solid
+        #d0d5dd;
 
     border-radius: 7px;
 
@@ -1428,6 +1753,7 @@ td input {
     text-align: center;
 
     font-size: 11px;
+
     font-weight: 700;
 
     color: var(--primary);
@@ -1445,31 +1771,39 @@ td input:hover {
 }
 
 td input:focus {
-    border-color: var(--primary-light);
+
+    border-color:
+        var(--primary-light);
 
     background: #fff;
 
     box-shadow:
-        0 0 0 3px rgba(36,59,103,0.07);
+        0 0 0 3px
+        rgba(36, 59, 103, 0.07);
 }
 
 td input.zero {
+
     color: var(--red);
 
-    background: var(--red-soft);
+    background:
+        var(--red-soft);
 
-    border-color: #f5c2bf;
+    border-color:
+        #f5c2bf;
 }
 
 
 /* =========================================================
    MEMBER TOTAL
-========================================================= */
+   ========================================================= */
 
 .memberTotal {
+
     color: var(--primary);
 
     font-size: 11px;
+
     font-weight: 800;
 
     white-space: nowrap;
@@ -1478,22 +1812,30 @@ td input.zero {
 
 /* =========================================================
    DELETE BUTTON
-========================================================= */
+   ========================================================= */
 
 .del {
-    border: 1px solid #ffd5d2;
 
-    background: var(--red-soft);
-    color: var(--red);
+    border:
+        1px solid
+        #ffd5d2;
+
+    background:
+        var(--red-soft);
+
+    color:
+        var(--red);
 
     padding: 8px 10px;
 
     border-radius: 7px;
 
     font-weight: 800;
+
     font-size: 10px;
 
     cursor: pointer;
+
     white-space: nowrap;
 
     transition:
@@ -1503,11 +1845,14 @@ td input.zero {
 }
 
 .del:hover {
-    background: var(--red);
+
+    background:
+        var(--red);
 
     color: #fff;
 
-    transform: translateY(-1px);
+    transform:
+        translateY(-1px);
 }
 
 .del i {
@@ -1517,14 +1862,16 @@ td input.zero {
 
 /* =========================================================
    EMPTY STATE
-========================================================= */
+   ========================================================= */
 
 .emptyState {
+
     display: none;
 
     flex-direction: column;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 55px 20px;
@@ -1533,16 +1880,19 @@ td input.zero {
 }
 
 .emptyState i {
+
     width: 58px;
     height: 58px;
 
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
-    background: var(--surface-soft);
+    background:
+        var(--surface-soft);
 
     color: #98a2b3;
 
@@ -1552,43 +1902,56 @@ td input.zero {
 }
 
 .emptyState h3 {
+
     color: var(--primary);
+
     font-size: 15px;
 }
 
 .emptyState p {
+
     color: var(--muted);
+
     font-size: 11px;
+
     margin-top: 6px;
 }
 
 
 /* =========================================================
    MODALS
-========================================================= */
+   ========================================================= */
 
 .modal {
+
     position: fixed;
+
     inset: 0;
 
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     padding: 20px;
 
     background:
-        rgba(11,19,43,0.72);
+        rgba(11, 19, 43, 0.72);
 
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter:
+        blur(7px);
+
+    -webkit-backdrop-filter:
+        blur(7px);
 
     z-index: 100000;
 }
 
 .modalBox {
+
     width: 100%;
+
     max-width: 400px;
 
     background: #fff;
@@ -1599,15 +1962,20 @@ td input.zero {
 
     text-align: center;
 
-    border: 1px solid rgba(255,255,255,0.5);
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.5);
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,0.25);
+        0 25px 70px
+        rgba(0, 0, 0, 0.25);
 
-    animation: popupIn 0.22s ease;
+    animation:
+        popupIn 0.22s ease;
 }
 
 .modalIcon {
+
     width: 62px;
     height: 62px;
 
@@ -1615,33 +1983,47 @@ td input.zero {
 
     border-radius: 18px;
 
-    background: var(--red-soft);
-    color: var(--red);
+    background:
+        var(--red-soft);
+
+    color:
+        var(--red);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     font-size: 22px;
 
-    border: 1px solid #ffd5d2;
+    border:
+        1px solid
+        #ffd5d2;
 }
 
 .saveIcon {
-    background: var(--green-soft);
-    color: var(--green);
 
-    border-color: #ccebd9;
+    background:
+        var(--green-soft);
+
+    color:
+        var(--green);
+
+    border-color:
+        #ccebd9;
 }
 
 .modalBox h3 {
+
     color: var(--primary);
 
     font-size: 19px;
+
     font-weight: 800;
 }
 
 .modalBox p {
+
     margin: 10px auto 23px;
 
     max-width: 320px;
@@ -1654,11 +2036,14 @@ td input.zero {
 }
 
 .modalBox p strong {
+
     color: var(--primary);
+
     font-weight: 800;
 }
 
 .modalActions {
+
     display: flex;
 
     gap: 10px;
@@ -1667,6 +2052,7 @@ td input.zero {
 }
 
 .modalActions button {
+
     flex: 1;
 
     border: none;
@@ -1678,6 +2064,7 @@ td input.zero {
     border-radius: 9px;
 
     font-size: 11px;
+
     font-weight: 800;
 
     cursor: pointer;
@@ -1696,11 +2083,14 @@ td input.zero {
 }
 
 .noBtn {
+
     background: #f2f4f7;
 
     color: var(--text);
 
-    border: 1px solid var(--border) !important;
+    border:
+        1px solid
+        var(--border) !important;
 }
 
 .noBtn:hover {
@@ -1708,11 +2098,14 @@ td input.zero {
 }
 
 .yesBtn {
+
     background: var(--red);
+
     color: #fff;
 
     box-shadow:
-        0 5px 14px rgba(217,45,32,0.18);
+        0 5px 14px
+        rgba(217, 45, 32, 0.18);
 }
 
 .yesBtn:hover {
@@ -1720,41 +2113,53 @@ td input.zero {
 }
 
 .saveConfirmBtn {
-    background: var(--green);
+
+    background:
+        var(--green);
+
     color: #fff;
 
     box-shadow:
-        0 5px 14px rgba(22,132,91,0.18);
+        0 5px 14px
+        rgba(22, 132, 91, 0.18);
 }
 
 .saveConfirmBtn:hover {
-    background: var(--green-dark);
+    background:
+        var(--green-dark);
 }
 
 
 /* =========================================================
    LOADER
-========================================================= */
+   ========================================================= */
 
 .loaderOverlay {
+
     position: fixed;
+
     inset: 0;
 
     display: none;
 
     align-items: center;
+
     justify-content: center;
 
     background:
-        rgba(255,255,255,0.94);
+        rgba(255, 255, 255, 0.94);
 
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter:
+        blur(5px);
+
+    -webkit-backdrop-filter:
+        blur(5px);
 
     z-index: 99999;
 }
 
 .loaderBox {
+
     min-width: 150px;
 
     padding: 24px 20px;
@@ -1763,21 +2168,30 @@ td input.zero {
 
     background: #fff;
 
-    border: 1px solid var(--border);
+    border:
+        1px solid
+        var(--border);
 
     border-radius: 16px;
 
-    box-shadow: var(--shadow-lg);
+    box-shadow:
+        var(--shadow-lg);
 }
 
 .spinner {
+
     width: 48px;
     height: 48px;
 
-    border: 4px solid #e7ebf2;
+    border:
+        4px solid
+        #e7ebf2;
 
-    border-top-color: var(--primary);
-    border-right-color: var(--accent);
+    border-top-color:
+        var(--primary);
+
+    border-right-color:
+        var(--accent);
 
     border-radius: 50%;
 
@@ -1788,18 +2202,23 @@ td input.zero {
 }
 
 .loaderBox p {
+
     color: var(--primary);
 
     font-size: 12px;
+
     font-weight: 800;
 }
 
 
 /* =========================================================
    FOOTER
-========================================================= */
+   ========================================================= */
 
 .siteFooter {
+
+    width: 100%;
+
     margin-top: 30px;
 
     background:
@@ -1811,10 +2230,15 @@ td input.zero {
 
     color: #fff;
 
-    border-top: 2px solid var(--accent);
+    border-top:
+        2px solid
+        var(--accent);
 }
 
 .footerContent {
+
+    width: 100%;
+
     max-width: 1500px;
 
     margin: auto;
@@ -1824,53 +2248,67 @@ td input.zero {
     display: flex;
 
     align-items: center;
+
     justify-content: space-between;
 
     gap: 20px;
 }
 
 .footerBrand {
+
     display: flex;
+
     align-items: center;
 
     gap: 12px;
 }
 
 .footerLogo {
+
     width: 44px;
     height: 44px;
 
     border-radius: 12px;
 
     background:
-        rgba(201,162,39,0.10);
+        rgba(201, 162, 39, 0.10);
 
-    border: 1px solid rgba(201,162,39,0.18);
+    border:
+        1px solid
+        rgba(201, 162, 39, 0.18);
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     font-size: 18px;
 
-    color: var(--accent-light);
+    color:
+        var(--accent-light);
 }
 
 .footerBrand h3 {
+
     font-size: 13px;
+
     font-weight: 800;
 }
 
 .footerBrand p {
+
     margin-top: 4px;
 
-    color: rgba(255,255,255,0.60);
+    color:
+        rgba(255, 255, 255, 0.60);
 
     font-size: 10px;
 }
 
 .footerInfo {
+
     display: flex;
+
     align-items: center;
 
     gap: 18px;
@@ -1879,25 +2317,32 @@ td input.zero {
 }
 
 .footerInfo span {
+
     display: flex;
+
     align-items: center;
 
     gap: 6px;
 
-    color: rgba(255,255,255,0.68);
+    color:
+        rgba(255, 255, 255, 0.68);
 
     font-size: 10px;
+
     font-weight: 600;
 }
 
 .footerInfo i {
+
     font-size: 11px;
-    color: var(--accent-light);
+
+    color:
+        var(--accent-light);
 }
 
 .footerBottom {
-    border-top:
-        1px solid rgba(255,255,255,0.08);
+
+    width: 100%;
 
     max-width: 1500px;
 
@@ -1908,65 +2353,102 @@ td input.zero {
     display: flex;
 
     justify-content: space-between;
+
     align-items: center;
 
     gap: 15px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.08);
 }
 
 .footerBottom p {
-    color: rgba(255,255,255,0.45);
+
+    color:
+        rgba(255, 255, 255, 0.45);
 
     font-size: 9px;
+
     font-weight: 500;
 }
 
 .footerCredit strong {
-    color: var(--accent-light);
+
+    color:
+        var(--accent-light);
+
     font-weight: 800;
 }
 
 
 /* =========================================================
    ANIMATIONS
-========================================================= */
+   ========================================================= */
 
 @keyframes loginAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(15px) scale(0.98);
+
+        transform:
+            translateY(15px)
+            scale(0.98);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0) scale(1);
+
+        transform:
+            translateY(0)
+            scale(1);
     }
 }
 
 @keyframes panelAppear {
+
     from {
+
         opacity: 0;
-        transform: translateY(-5px);
+
+        transform:
+            translateY(-5px);
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
     }
 }
 
 @keyframes popupIn {
+
     from {
+
         opacity: 0;
-        transform: scale(0.94) translateY(10px);
+
+        transform:
+            scale(0.94)
+            translateY(10px);
     }
 
     to {
+
         opacity: 1;
-        transform: scale(1) translateY(0);
+
+        transform:
+            scale(1)
+            translateY(0);
     }
 }
 
 @keyframes spin {
+
     from {
         transform: rotate(0deg);
     }
@@ -1979,26 +2461,32 @@ td input.zero {
 
 /* =========================================================
    TABLET
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 900px) {
 
     .mainHeader {
+
         padding: 12px 18px;
+
         flex-wrap: wrap;
     }
 
     .headerButtons {
+
         width: 100%;
+
         justify-content: flex-end;
     }
 
     .wrap {
+
         padding: 18px;
     }
 
     .footerContent,
     .footerBottom {
+
         padding-left: 18px;
         padding-right: 18px;
     }
@@ -2007,23 +2495,64 @@ td input.zero {
 
 /* =========================================================
    MOBILE
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
+    html,
+    body {
+
+        width: 100%;
+
+        min-width: 320px;
+
+        min-height: 100%;
+
+        overflow-x: hidden;
+
+        overflow-y: auto;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    /* =====================================================
+       LOGIN
+       ===================================================== */
+
     #loginPage {
+
+        min-height: 100vh;
+
         padding: 14px;
+
+        align-items: flex-start;
+
+        overflow: visible;
+
+        padding-top: 35px;
+
+        padding-bottom: 35px;
     }
 
     .loginBox {
+
+        width: 100%;
+
         max-width: 430px;
+
         padding: 32px 19px;
+
         border-radius: 18px;
+
+        margin: auto;
     }
 
     .loginLogo {
+
         width: 62px;
         height: 62px;
+
         font-size: 25px;
     }
 
@@ -2036,7 +2565,9 @@ td input.zero {
     }
 
     .loginBox input {
+
         min-height: 46px;
+
         font-size: 16px;
     }
 
@@ -2046,45 +2577,58 @@ td input.zero {
 
 
     /* =====================================================
-       HEADER
-    ===================================================== */
+       DASHBOARD HEADER
+       ===================================================== */
 
     .mainHeader {
+
         position: relative;
+
+        width: 100%;
+
+        min-height: auto;
 
         padding: 15px 12px;
 
         flex-direction: column;
+
         align-items: stretch;
 
         gap: 13px;
     }
 
     .headerTitle {
+
         justify-content: center;
+
         text-align: center;
     }
 
     .headerTitle > i {
+
         width: 42px;
         height: 42px;
+
         font-size: 19px;
     }
 
-    .headerTitle h1 {
+    .headerText h1 {
+
         font-size: 15px;
     }
 
-    .headerTitle p {
+    .headerText p {
+
         font-size: 8px;
     }
 
 
     /* =====================================================
        BUTTONS
-    ===================================================== */
+       ===================================================== */
 
     .headerButtons {
+
         width: 100%;
 
         display: grid;
@@ -2095,6 +2639,7 @@ td input.zero {
     }
 
     .headerButtons .btn {
+
         width: 100%;
 
         min-height: 44px;
@@ -2105,28 +2650,40 @@ td input.zero {
 
     /* =====================================================
        MAIN
-    ===================================================== */
+       ===================================================== */
 
     .wrap {
+
+        width: 100%;
+
         padding: 10px;
+
+        overflow: visible;
     }
 
 
     /* =====================================================
-       CARDS
-    ===================================================== */
+       SUMMARY CARDS
+       ===================================================== */
 
     .top {
+
         grid-template-columns: 1fr;
+
         gap: 10px;
     }
 
     .card {
+
+        width: 100%;
+
         padding: 16px;
+
         border-radius: 14px;
     }
 
     .cardIcon {
+
         width: 46px;
         height: 46px;
 
@@ -2142,19 +2699,22 @@ td input.zero {
 
     /* =====================================================
        SEARCH
-    ===================================================== */
+       ===================================================== */
 
     .searchBox input {
+
         min-height: 45px;
+
         font-size: 16px;
     }
 
 
     /* =====================================================
        YEAR
-    ===================================================== */
+       ===================================================== */
 
     .yearBar {
+
         display: grid;
 
         grid-template-columns: 1fr;
@@ -2167,11 +2727,14 @@ td input.zero {
     }
 
     .yearSelectBox {
+
         justify-content: space-between;
     }
 
     #yearSelect {
+
         min-height: 43px;
+
         font-size: 16px;
     }
 
@@ -2182,29 +2745,35 @@ td input.zero {
 
     /* =====================================================
        ADD MEMBER
-    ===================================================== */
+       ===================================================== */
 
     .panel {
+
         padding: 13px;
+
         border-radius: 14px;
     }
 
     .addMemberForm {
+
         flex-direction: column;
     }
 
     .addMemberForm input,
     .addMemberForm button {
+
         width: 100%;
+
         min-height: 44px;
     }
 
 
     /* =====================================================
-       TABLE - MOBILE
-    ===================================================== */
+       TABLE HEADER
+       ===================================================== */
 
     .tableHeader {
+
         padding: 15px;
 
         align-items: flex-start;
@@ -2222,31 +2791,58 @@ td input.zero {
         font-size: 10px;
     }
 
+
+    /* =====================================================
+       TABLE
+       ===================================================== */
+
+    .tableBox {
+
+        width: 100%;
+
+        overflow: visible;
+    }
+
+    .scroll {
+
+        width: 100%;
+
+        overflow-x: auto;
+
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
     .scroll table {
+
         min-width: 1050px;
     }
 
 
     /* =====================================================
-       MOBILE STICKY NAME COLUMN
-    ===================================================== */
+       STICKY NAME COLUMN
+       ===================================================== */
 
     .scroll th:first-child,
     .scroll td:first-child {
+
         min-width: 170px;
+
         width: 170px;
     }
 
     .scroll th:first-child {
+
         position: sticky;
 
-        top: 0;
         left: 0;
 
         z-index: 100;
     }
 
     .scroll td:first-child {
+
         position: sticky;
 
         left: 0;
@@ -2256,28 +2852,39 @@ td input.zero {
         background: #fff;
     }
 
+
+    /* =====================================================
+       TABLE INPUTS
+       ===================================================== */
+
     .scroll td input {
+
         min-width: 72px;
+
         min-height: 40px;
 
         font-size: 16px;
     }
 
     .del {
+
         min-height: 40px;
+
         padding: 8px 10px;
     }
 
 
     /* =====================================================
        MODALS
-    ===================================================== */
+       ===================================================== */
 
     .modal {
+
         padding: 12px;
     }
 
     .modalBox {
+
         max-width: 390px;
 
         padding: 26px 18px;
@@ -2286,6 +2893,7 @@ td input.zero {
     }
 
     .modalActions {
+
         display: grid;
 
         grid-template-columns: 1fr 1fr;
@@ -2300,9 +2908,15 @@ td input.zero {
 
     /* =====================================================
        FOOTER
-    ===================================================== */
+       ===================================================== */
+
+    .siteFooter {
+
+        margin-top: 25px;
+    }
 
     .footerContent {
+
         flex-direction: column;
 
         align-items: center;
@@ -2313,23 +2927,28 @@ td input.zero {
     }
 
     .footerBrand {
+
         flex-direction: column;
 
         gap: 8px;
     }
 
     .footerBrand p {
+
         max-width: 280px;
 
         line-height: 1.5;
     }
 
     .footerInfo {
+
         justify-content: center;
+
         gap: 11px;
     }
 
     .footerBottom {
+
         flex-direction: column;
 
         text-align: center;
@@ -2343,19 +2962,27 @@ td input.zero {
 
 /* =========================================================
    SMALL PHONES
-========================================================= */
+   ========================================================= */
 
 @media (max-width: 420px) {
 
+    #loginPage {
+
+        padding:
+            25px 10px 30px;
+    }
+
     .loginBox {
-        padding: 27px 15px;
+
+        padding:
+            27px 15px;
     }
 
     .loginBox h1 {
         font-size: 14px;
     }
 
-    .headerTitle h1 {
+    .headerText h1 {
         font-size: 13px;
     }
 
@@ -2373,7 +3000,9 @@ td input.zero {
 
     .scroll th:first-child,
     .scroll td:first-child {
+
         min-width: 155px;
+
         width: 155px;
     }
 
@@ -2384,17 +3013,72 @@ td input.zero {
 
 
 /* =========================================================
-   REDUCE MOTION
-========================================================= */
+   VERY SHORT MOBILE SCREENS
+   ========================================================= */
+
+@media (max-height: 650px) and (max-width: 700px) {
+
+    #loginPage {
+
+        align-items: flex-start;
+
+        padding-top: 20px;
+
+        padding-bottom: 25px;
+    }
+
+    .loginBox {
+
+        margin-top: 0;
+    }
+}
+
+
+/* =========================================================
+   MOBILE LANDSCAPE
+   ========================================================= */
+
+@media (max-height: 500px) and (max-width: 900px) {
+
+    #loginPage {
+
+        align-items: flex-start;
+
+        padding-top: 15px;
+
+        padding-bottom: 20px;
+    }
+
+    .loginBox {
+
+        padding-top: 24px;
+
+        padding-bottom: 24px;
+    }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
     }
 }
