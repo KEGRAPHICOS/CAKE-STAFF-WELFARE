@@ -107,51 +107,29 @@ function render(records) {
 ========================================================= */
 
 async function loadRecords() {
-
   try {
-
-    statusMessage.innerHTML = `
-      <span class="status-loader"></span>
-      Loading live records...
-    `;
-
+    statusMessage.textContent = `Loading ${year} records...`;
     statusMessage.className = "data-status";
-
-    const response = await fetch(
-      `/api/data/${year}`,
-      { cache: "no-store" }
-    );
-
-    if (!response.ok) {
-      throw new Error("Server unavailable");
+    const key = `cake_welfare_records_${year}`;
+    const saved = localStorage.getItem(key);
+    let records;
+    if (saved !== null) {
+      records = JSON.parse(saved);
+    } else {
+      const response = await fetch("data.json", { cache: "no-store" });
+      if (!response.ok) throw new Error("Could not load starter records");
+      const seed = await response.json();
+      records = seed[year] || [];
     }
-
-    const records = await response.json();
-
     render(Array.isArray(records) ? records : []);
-
-    statusMessage.innerHTML = `
-      <span class="status-loader"></span>
-      Live records • ${year}
-    `;
-
+    statusMessage.textContent = `Records • ${year} • This browser`;
     statusMessage.className = "data-status online";
-
   } catch (error) {
-
     console.error("Error loading records:", error);
-
-    statusMessage.innerHTML = `
-      <span class="status-loader"></span>
-      Unable to load live records. Start the backend server.
-    `;
-
+    statusMessage.textContent = "Unable to load records. Open this site through a web host or local web server.";
     statusMessage.className = "data-status offline";
-
     render([]);
-
   }
-
 }
 
 
