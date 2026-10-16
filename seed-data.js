@@ -296,6 +296,20 @@ window.CAKE_SEED_DATA = {
                                            "OCT": 0, 
                                            "NOV": 0, 
                                            "DEC": 0 } },
+
+         { "name": "SAMUEL AMPOFO", "c": { "JAN": 50.0, 
+                                           "FEB": 50.0, 
+                                           "MAR": 0.0, 
+                                           "APR": 0.0, 
+                                           "MAY": 0.0, 
+                                           "JUN": 0.0, 
+                                           "JUL": 0.0, 
+                                           "AUG": 0.0, 
+                                           "SEP": 0, 
+                                           "OCT": 0, 
+                                           "NOV": 0, 
+                                           "DEC": 0 } },
+      
         
         { "name": "SEWU TANKO LOMOTEY", "c": { "JAN": 50.0, 
                                            "FEB": 50.0, 
