@@ -75,7 +75,7 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
-                                           "OCT": 0, 
+                                           "OCT": 50.0, 
                                            "NOV": 0, 
                                            "DEC": 0 } },
         
@@ -367,6 +367,8 @@ window.CAKE_SEED_DATA = {
                                            "DEC": 0 } }
         
     ],
+
+
     "2027": [
         { "name": "ADJEI CHRISTIAN", "c": { "JAN": 0, 
                                            "FEB": 0, 
