@@ -174,7 +174,7 @@ window.CAKE_SEED_DATA = {
                                            "FEB": 50.0, 
                                            "MAR": 50.0, 
                                            "APR": 50.0, 
-                                           "MAY": 50.0, 
+                                           "MAY": 0.0, 
                                            "JUN": 0.0, 
                                            "JUL": 0.0, 
                                            "AUG": 0.0, 
