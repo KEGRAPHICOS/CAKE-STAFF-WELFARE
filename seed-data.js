@@ -297,7 +297,7 @@ window.CAKE_SEED_DATA = {
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
                                            "OCT": 50.0, 
-                                           "NOV": 0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
 
          { "name": "SAMUEL AMPOFO", "c": { "JAN": 50.0, 
