@@ -25,6 +25,7 @@ window.CAKE_SEED_DATA = {
                                            "OCT": 0, 
                                            "NOV": 0, 
                                            "DEC": 0 } },
+
         
         { "name": "AMUZU PETER", "c": { "JAN": 50.0, 
                                            "FEB": 50.0, 
