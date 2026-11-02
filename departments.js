@@ -359,7 +359,7 @@
                         <div class="department-panel-header">
                             <div>
                                 <h2>${escapeHTML(department)}</h2>
-                                <p>Department member contribution summary</p>
+                                <p>Contribution summary</p>
                             </div>
 
                             <div class="department-stats">
