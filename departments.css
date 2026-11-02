@@ -1,0 +1,300 @@
+
+/* ========================================
+   DEPARTMENT CONTRIBUTIONS PAGE
+   CAKE STAFFS WELFARE
+======================================== */
+
+/* Main page container */
+.department-container {
+    padding-top: 112px;
+    padding-bottom: 40px;
+}
+
+/* Year selector */
+.department-year {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--muted);
+}
+
+.department-year select {
+    min-width: 110px;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #fff;
+    color: var(--text);
+    font: 600 14px "Segoe UI", Arial, sans-serif;
+}
+
+/* Department tables container */
+.department-tables {
+    display: grid;
+    gap: 22px;
+    margin-top: 22px;
+}
+
+/* Individual department panel */
+.department-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+/* Department panel header */
+.department-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 20px 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.department-panel-header h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.department-panel-header p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* Department statistics */
+.department-stats {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.department-stat {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.department-stat strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 17px;
+    color: var(--text);
+}
+
+/* Responsive table wrapper */
+.department-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Department table layout */
+.department-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 540px;
+}
+
+/* Table headings and cells */
+.department-table th,
+.department-table td {
+    padding: 13px 18px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+}
+
+/* Department member names */
+.department-table th:first-child,
+.department-table td:first-child {
+    text-align: left;
+}
+
+/* Member name column */
+.department-table .member-name {
+    text-align: left;
+}
+
+/* Table heading appearance */
+.department-table th {
+    background: #f5f8fc;
+    color: #52647a;
+    font-size: 10px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+/* Remove bottom border from final row */
+.department-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Contribution amounts */
+.department-table .amount {
+    text-align: right;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Department totals row */
+.department-table tfoot td {
+    background: #f5f8fc;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* Empty department message */
+.department-empty {
+    padding: 22px;
+    color: var(--muted);
+}
+
+/* Data status message */
+.data-status {
+    margin-top: 18px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ========================================
+   MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
+    .department-container {
+        padding-top: 100px;
+    }
+
+    .department-panel-header {
+        padding: 16px;
+    }
+
+    .department-table th,
+    .department-table td {
+        padding: 12px;
+    }
+
+    .department-year {
+        margin-top: 14px;
+    }
+
+    .department-stats {
+        gap: 14px;
+    }
+}
+
+
+
+/* ========================================
+   PROFESSIONAL DEPARTMENT SEARCH BAR
+======================================== */
+
+.department-search-section {
+    display: block;
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 24px 0 20px;
+    padding: 0;
+}
+
+/* Search label */
+.department-search-section label {
+    display: block;
+    margin-bottom: 9px;
+    color: #263445;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+/* Search input */
+#departmentSearch {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    height: 50px;
+    box-sizing: border-box;
+
+    padding: 0 16px 0 45px;
+
+    border: 1px solid #d5dce5;
+    border-radius: 9px;
+
+    background-color: #ffffff;
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+
+    /* Search icon */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 19px;
+}
+
+/* Focus state */
+#departmentSearch:focus {
+    border-color: #64748b;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(100, 116, 139, 0.13);
+}
+
+/* Placeholder */
+#departmentSearch::placeholder {
+    color: #98a2b3;
+    opacity: 1;
+}
+
+/* Keep the search and tables aligned */
+.department-container {
+    min-width: 0;
+}
+
+.department-tables {
+    width: 100%;
+    min-width: 0;
+}
+
+.department-panel {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.department-table-wrap {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive sizing */
+@media (max-width: 768px) {
+    .department-search-section {
+        margin-top: 18px;
+        margin-bottom: 16px;
+    }
+
+    #departmentSearch {
+        height: 47px;
+        font-size: 14px;
+    }
+}
+
