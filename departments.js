@@ -5,7 +5,7 @@
     ======================================== */
 
     const departments = {
-        "PRODUCTION DEPARTMENTS": [
+        "PRODUCTION DEPARTMENT": [
             "AMUZU PETER",
             "BONNAH KENNETH",
             "DANIEL DZIWORNU",
@@ -28,14 +28,14 @@
             "VIEKU PATRICK"
         ],
 
-        "TECHNICAL DEPARTMENTS": [
+        "TECHNICAL DEPARTMENT": [
             "AKLI GERSHON",
             "JUSTICE KOOMSON",
             "ROBERT NII KOTEI",
             "SOLOMON ADDO"
         ],
 
-        "QUALITY DEPARTMENTS": [
+        "QUALITY DEPARTMENT": [
             "ADJEI CHRISTIAN",
             "ISAAC MENSAH",
             "MAKAFUI SAKRE",
