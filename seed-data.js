@@ -49,7 +49,7 @@ window.CAKE_SEED_DATA = {
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
                                            "OCT": 50.0, 
-                                           "NOV": 0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "DANIEL DZIWORNU", "c": { "JAN": 50.0, 
@@ -113,8 +113,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "JOHN NKETIA", "c": { "JAN": 50.0, 
@@ -204,8 +204,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0,  
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "OBED ASSAN", "c": { "JAN": 50.0, 
@@ -230,8 +230,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0,
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "PETER BOAKYE", "c": { "JAN": 50.0, 
