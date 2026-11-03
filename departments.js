@@ -31,7 +31,7 @@
         "TECHNICAL DEPARTMENT": [
             "AKLI GERSHON",
             "JUSTICE KOOMSON",
-            "ROBERT NII KOTEI",
+            "ROBERT KWATENG",
             "SOLOMON ADDO"
         ],
 
@@ -39,7 +39,7 @@
             "ADJEI CHRISTIAN",
             "ISAAC MENSAH",
             "MAKAFUI SAKRE",
-            "ROBERT KWATENG"
+            "ROBERT NII KOTEI"
         ]
     };
 
