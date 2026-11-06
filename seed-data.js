@@ -22,8 +22,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "AMUZU PETER", "c": { "JAN": 50.0, 
@@ -269,8 +269,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0,
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "ROBERT NII KOTEI", "c": { "JAN": 50.0, 
@@ -335,21 +335,8 @@ window.CAKE_SEED_DATA = {
                                            "JUL": 50.0, 
                                            "AUG": 50.0, 
                                            "SEP": 50.0, 
-                                           "OCT": 0, 
-                                           "NOV": 0, 
-                                           "DEC": 0 } },
-        
-        { "name": "WILLIAM TETTEH", "c": { "JAN": 50.0, 
-                                           "FEB": 50.0, 
-                                           "MAR": 50.0, 
-                                           "APR": 50.0, 
-                                           "MAY": 0.0, 
-                                           "JUN": 0.0, 
-                                           "JUL": 0, 
-                                           "AUG": 0, 
-                                           "SEP": 0, 
-                                           "OCT": 0, 
-                                           "NOV": 0, 
+                                           "OCT": 50.0, 
+                                           "NOV": 50.0, 
                                            "DEC": 0 } },
         
         { "name": "VIEKU PATRICK", "c": { "JAN": 50.0, 
@@ -366,7 +353,6 @@ window.CAKE_SEED_DATA = {
                                            "DEC": 0 } }
         
     ],
-
 
     "2027": [
         { "name": "ADJEI CHRISTIAN", "c": { "JAN": 0, 
