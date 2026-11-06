@@ -24,7 +24,6 @@
             "SAMUEL ADADE",
             "SAMUEL AMPOFO",
             "SEWU TANKO LOMOTEY",
-            "WILLIAM TETTEH",
             "VIEKU PATRICK"
         ],
 
